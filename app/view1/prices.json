@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1 Kart",
+    "time": "8 min",
+    "small": "4,90 EUR",
+    "big": "6,70 EUR"
+  },
+  {
+    "id": "1 Kart",
+    "time": "16 min",
+    "small": "8,90 EUR",
+    "big": "12,30 EUR"
+  },
+  {
+    "id": "1 Kart",
+    "time": "30 min",
+    "small": "17,00 EUR",
+    "big": "23,40 EUR"
+  },
+  {
+    "id": "1 Kart",
+    "time": "60 min",
+    "small": "32,50 EUR",
+    "big": "43,40 EUR"
+  }
+]
