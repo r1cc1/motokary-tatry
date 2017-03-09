@@ -27,3 +27,75 @@
 section, footer {
   padding: 50px;
 }
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: lighter;
+  line-height: 1.1;
+  color: inherit;
+  letter-spacing: 1px;
+}
+p, span, a {
+  font-weight: lighter;
+}
+.header-content {
+  overflow: hidden;
+}
+.header-content-inner{
+  display: block;
+  position: relative;
+  height: 100%;
+}
+.main-image {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: transparent url("assets/imgs/gokart.jpg") center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.bg-primary {
+  background: black;
+}
+.race-flag {
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 100%;
+  background: transparent url("assets/imgs/race-flag.png") center repeat;
+  background-size: 100px;
+}
+.navbar-default {
+  background-color: #ffffff;
+  border-color: #000000;
+  border-style: double;
+  border-width: 0 0 4px;
+}
+.no-padding {
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+  background: black;
+}
+.content {
+  background: white;
+}
+
+@media (min-width: 768px) {
+  .col-sm-6 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.navbar-start {
+  background-color: transparent;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0 0 4px;
+}
+
+.navbar-start .navbar-nav>li>a {
+  color: white;
+}

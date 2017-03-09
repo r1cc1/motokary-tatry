@@ -1,26 +1,99 @@
 [
   {
-    "id": "1 Kart",
+    "id": "1",
     "time": "8 min",
-    "small": "4,90 EUR",
-    "big": "6,70 EUR"
+    "small": "4,90 &euro;",
+    "big": "6,70 &euro;"
   },
   {
-    "id": "1 Kart",
+    "id": "1",
     "time": "16 min",
-    "small": "8,90 EUR",
-    "big": "12,30 EUR"
+    "small": "8,90 &euro;",
+    "big": "12,30 &euro;"
   },
   {
-    "id": "1 Kart",
+    "id": "1",
     "time": "30 min",
-    "small": "17,00 EUR",
-    "big": "23,40 EUR"
+    "small": "17,00 &euro;",
+    "big": "23,40 &euro;"
   },
   {
-    "id": "1 Kart",
+    "id": "1",
     "time": "60 min",
-    "small": "32,50 EUR",
-    "big": "43,40 EUR"
+    "small": "32,50 &euro;",
+    "big": "43,40 &euro;"
+  },
+  {
+    "id": "3",
+    "time": "1 hod",
+    "small": "93 &euro;",
+    "big": "110 &euro;"
+  },
+  {
+    "id": "3",
+    "time": "2 hod",
+    "small": "178 &euro;",
+    "big": "215 &euro;"
+  },
+  {
+    "id": "3",
+    "time": "3 hod",
+    "small": "263 &euro;",
+    "big": "320 &euro;"
+  },
+  {
+    "id": "3",
+    "time": "4 hod",
+    "small": "348 &euro;",
+    "big": "438 &euro;"
+  },
+  {
+    "id": "4",
+    "time": "1 hod",
+    "small": "126 &euro;",
+    "big": ""
+  },
+  {
+    "id": "4",
+    "time": "2 hod",
+    "small": "244 &euro;",
+    "big": ""
+  },
+  {
+    "id": "4",
+    "time": "3 hod",
+    "small": "364 &euro;",
+    "big": ""
+  },
+  {
+    "id": "4",
+    "time": "4 hod",
+    "small": "481 &euro;",
+    "big": ""
+  },
+  {
+    "id": "5",
+    "time": "1 hod",
+    "small": "157 &euro;",
+    "big": ""
+  },
+  {
+    "id": "5",
+    "time": "2 hod",
+    "small": "307 &euro;",
+    "big": ""
+  },
+  {
+    "id": "5",
+    "time": "3 hod",
+    "small": "462 &euro;",
+    "big": ""
+  },
+  {
+    "id": "5",
+    "time": "4 hod",
+    "small": "592 &euro;",
+    "big": ""
   }
 ]
+
