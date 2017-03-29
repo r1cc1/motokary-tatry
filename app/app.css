@@ -1,5 +1,14 @@
 /* app css stylesheet */
 
+
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat/Montserrat-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -23,19 +32,51 @@
   content: "|";
   padding-right: 0.3em;
 }
-
-section, footer {
-  padding: 50px;
+header {
+  z-index: 2;
 }
+section, footer {
+  position: relative;
+  padding: 0;
+  z-index: 3;
+}
+footer > .container {
+  padding: 0;
+}
+footer p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-bottom: 0;
+}
+
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  font-family: inherit;
+  font-family: 'Montserrat', sans-serif;
   font-weight: lighter;
   line-height: 1.1;
   color: inherit;
   letter-spacing: 1px;
 }
+h1.main-title {
+  font-size: 5em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #00b3ee;
+}
+h3.bold {
+  font-weight: bold;
+}
 p, span, a {
+  font-family: 'Montserrat', sans-serif;
   font-weight: lighter;
+}
+.section-heading {
+  text-transform: uppercase;
+}
+.table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+  border-bottom-width: 1px;
+  text-align: center;
 }
 .header-content {
   overflow: hidden;
@@ -55,31 +96,31 @@ p, span, a {
   background-attachment: fixed;
 }
 .bg-primary {
-  background: black;
+  background: #191919;
 }
 .race-flag {
   display: block;
   position: relative;
-  height: 40px;
+  height: 49px;
   width: 100%;
   background: transparent url("assets/imgs/race-flag.png") center repeat;
-  background-size: 100px;
+  background-size: 125px;
 }
-.navbar-default {
-  background-color: #ffffff;
-  border-color: #000000;
-  border-style: double;
-  border-width: 0 0 4px;
-}
+
 .no-padding {
   padding: 0;
 }
 body {
-  overflow-x: hidden;
-  background: black;
+  background: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
 }
 .content {
   background: white;
+}
+.container {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 @media (min-width: 768px) {
@@ -89,13 +130,325 @@ body {
   }
 }
 
-.navbar-start {
-  background-color: transparent;
-  border-color: transparent;
-  border-style: none;
-  border-width: 0 0 4px;
+#map {
+  padding: 0 15px;
 }
 
-.navbar-start .navbar-nav>li>a {
+.navbar-default {
+  background-color: rgba(0,0,0,0.8);
+  -webkit-transition: all 0.5s; /* Safari */
+  transition: all 0.5s;
+  border: 0;
+}
+.navbar-start {
+  background-color: transparent;
+  -webkit-transition: all 0.5s; /* Safari */
+  transition: all 0.5s;
+  position: absolute;
+  top: auto;
+  bottom: -20px;
+}
+
+.navbar-default .navbar-nav>li>a {
   color: white;
+}
+.navbar-default .navbar-brand {
+  color: deepskyblue;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav li a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.nav li.active {
+  border-top: 4px solid deepskyblue;
+  margin-bottom: -4px;
+}
+.nav li.active > a {
+  margin-top: -4px;
+  color: deepskyblue !Important;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+  color: white;
+  background: transparent;
+}
+.nav li a.language {
+  border-left: 1px solid white;
+}
+
+
+.map {
+  max-height: 440px;
+}
+
+.nav li a.flag-us {
+  font-size: 0;
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 50px;
+  background: transparent url(assets/imgs/us-flag.svg) center no-repeat;
+  background-size: contain;
+}
+.nav li a.flag-svk {
+  font-size: 0;
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 50px;
+  background: transparent url(assets/imgs/svk-flag.svg) center no-repeat;
+  background-size: contain;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  background: transparent url(assets/imgs/motokary-tatry-logo.svg) center no-repeat;
+  background-size: cover;
+  color: transparent;
+  font-size: 0;
+}
+a > span.logo-red, a > span.logo-orange, a > span.logo-green {
+  display: inline;
+  position: relative;
+}
+a > span.logo-red {
+  color: #FF0000;
+}
+a > span.logo-orange {
+  color: #FFCC00;
+  left: -5px;
+}
+a > span.logo-green {
+  color: #60FF14	;
+  left: -10px;
+}
+
+.row p {
+  font-size: 1.2em;
+  line-height: 2em;
+}
+
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a {
+  transition: all 0.25s linear;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+  background: deepskyblue;
+  transition: all 0.25s linear;
+}
+.navbar-default .navbar-nav>li>a.active, .navbar-default .navbar-nav>li>a.active {
+  color: black;
+  background: #60FF14;
+  transition: all 0.5s linear;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+  color: deepskyblue;
+  background-color: transparent;
+}
+
+.center-wrap {
+  display: table;
+  position: absolute;
+  left: 0; top: 0;
+  height: 100%;
+  width: 100%;
+}
+.center-content{
+  display: table-cell;
+  position: relative;
+  vertical-align: bottom;
+  text-align: center;
+}
+.center-content a {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  height: auto;
+  width: 100%;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1em 0;
+
+}
+.center-content a span {
+  background: black;
+  padding: 30px 10px;
+  border-radius: 50%;
+  min-width: 100px;
+  display: inline-block;
+  -webkit-transition: all 0.5s; /* Safari */
+  transition: all 0.5s;
+  border: 2px solid black;
+}
+.center-content a:hover span {
+  border-color: black;
+}
+.center-content a:hover span.red {
+  background: #FF0000;
+  color: black;
+}
+.center-content a:hover span.orange {
+  background: #FFCC00;
+  color: black;
+}
+.center-content a:hover span.green {
+  background: #60FF14;
+  color: black;
+}
+.center-content a span.red{
+  color: #FF0000;
+  border-color: #FF0000;
+}
+.center-content a span.orange{
+  color: #FFCC00;
+  border-color: #FFCC00;
+}
+.center-content a span.green{
+  color: #60FF14;
+  border-color: #60FF14;
+}
+.center-content a:hover, .center-content a:focus{
+  text-decoration: none;
+}
+
+.top-content {
+  display: table-cell;
+  position: fixed;
+  vertical-align: top;
+  text-align: center;
+  width: 100%;
+}
+.top-content a {
+  display: inline-block;
+  position: relative;
+  height: auto;
+  color: white;
+  font-size: 3em;
+  /* text-transform: uppercase; */
+  padding: 3em 0;
+  width: 49%;
+}
+.top-content a:hover, .top-content a:focus {
+  text-decoration: none;
+  color:#60FF14;
+}
+
+
+
+
+.bottom-content {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  left: 0;
+}
+.bottom-content a {
+  display: inline-block;
+  position: relative;
+  color: white;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  background: url("assets/imgs/icon-flags.svg") no-repeat center;
+  background-size: contain;
+  margin: 0 auto;
+}
+.bottom-content a:hover, .bottom-content a:focus {
+  background: black;
+  -webkit-mask: url('assets/imgs/icon-flags.svg') center / contain no-repeat;
+  mask: url('assets/imgs/icon-flags.svg') center / contain no-repeat;
+}
+.top-content a:hover, .top-content a:focus {
+  text-decoration: none;
+  color:#60FF14;
+}
+
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: transparent;
+}
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  background-color: transparent;
+  padding-bottom: 0px;
+  padding-right: 20px;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+  border-color: transparent;
+  background-color: transparent;
+}
+.hamburger-box {
+  height: 20px;
+}
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+  background-color: #FFCC00;
+}
+.hamburger-inner:before {
+  background-color: #FF0000;
+}
+.hamburger-inner:after {
+  background-color: #60FF14;
+}
+
+
+.icon {
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+
+}
+.icon-news {
+  background: url("assets/imgs/icon-info.svg") no-repeat center;
+  background-size: contain;
+}
+.icon-time {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 40px;
+  background: url("assets/imgs/icon-time.svg") no-repeat center;
+  background-size: contain;
+  background: black;
+  -webkit-mask: url('assets/imgs/icon-time.svg') center / contain no-repeat;
+  mask: url('assets/imgs/icon-time.svg') center / contain no-repeat;
+}
+.icon-race {
+  background: url("assets/imgs/icon-flags.svg") no-repeat center;
+  background-size: contain;
+}
+
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+  border: 1px solid deepskyblue;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .navbar-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .top-content  {
+    display: table-row;
+    width: 100%;
+
+  }
+  .top-content a {
+    display: block;
+    font-size: 2em;
+    padding: 3em 0 0 0;
+    width: 100%;
+  }
 }

@@ -16,9 +16,10 @@
 
     <link rel="shortcut icon" href="http://www.motokarytatry.sk/favicon.ico"/>
 
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="components/bower/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="components/bower/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="components/bower/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="components/bower/css-hamburgers/dist/hamburgers.min.css">
     <link rel="stylesheet" href="app.css">
 
 
@@ -26,8 +27,6 @@
           rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
           rel='stylesheet' type='text/css'>
-    <!-- Plugin CSS -->
-    <link href="bower_components/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
 
 </head>
 <body>
@@ -37,25 +36,26 @@
 <![endif]-->
 
 
-<div ng-view class="content"></div>
+<div ng-view class="content" ng-controller="mainCtrl"></div>
 
 
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="components/bower/angular/angular.min.js"></script>
+<script src="components/bower/angular-route/angular-route.min.js"></script>
+<script src="components/bower/angular-scroll/angular-scroll.min.js"></script>
+<script src="components/bower/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="components/bower/jquery/dist/jquery.min.js"></script>
+<script src="components/bower/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- THEME -->
 <!-- Plugin JavaScript -->
-<script src="bower_components/scrollreveal/dist/scrollreveal.js"></script>
-<script src="bower_components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+<script src="components/bower/scrollreveal/dist/scrollreveal.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
 <script src="app.js"></script>
-<script src="view1/view1.js"></script>
-<script src="view2/view2.js"></script>
+<script src="svk/svk.js"></script>
+<script src="eng/eng.js"></script>
 </body>
 </html>

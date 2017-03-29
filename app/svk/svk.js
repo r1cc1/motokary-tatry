@@ -1,68 +1,25 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.svk', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
+
+  $routeProvider.when('/svk', {
+    templateUrl: 'svk/svk.html',
+    controller: 'svkCtrl'
   });
-}])
 
-.controller('View1Ctrl', [function() {
+}]).controller('svkCtrl', [ '$scope', function($scope) {
 
-    function getWindowHeight() {
-        var viewportheight;
-
-        if (typeof window.innerWidth != 'undefined')
-        { viewportheight = window.innerHeight }
-        else if (typeof document.documentElement != 'undefined'
-            && typeof document.documentElement.clientWidth !=
-            'undefined' && document.documentElement.clientWidth != 0)
-        {  viewportheight = document.documentElement.clientHeight }
-        else{
-            viewportheight = document.getElementsByTagName('body')[0].clientHeight
-        }
-        var firstView = document.getElementById("header-content");
-        firstView.style.height = (viewportheight -40) + 'px';
-    }
-    getWindowHeight();
-
-
-    function getWindowHeightiFrame() {
-        var viewportwidth;
-        if (typeof window.innerWidth != 'undefined')
-        { viewportwidth = window.innerWidth }
-
-        else if (typeof document.documentElement != 'undefined'
-            && typeof document.documentElement.clientHeight !=
-            'undefined' && document.documentElement.clientHeight != 0)
-        {  viewportwidth = document.documentElement.clientWidth }
-        else{
-            viewportwidth = document.getElementsByTagName('body')[0].clientWidth;
-        }
-        var youtube = document.getElementById("youtube");
-        var newVideoHeight = ((viewportwidth / 3) * 1.65);
-
-        console.log(newVideoHeight);
-        youtube.height = newVideoHeight + 'px';
-
-        $("#google-map").height(newVideoHeight);
-    }
-    getWindowHeightiFrame();
-
-
-    window.addEventListener('resize', function(event){
-        getWindowHeight();
-        getWindowHeightiFrame();
-    });
-
+    console.log('init svkCtrl');
+    // set Language
+    $scope.lang = 'svk';
 
     function loadJSON(callback) {
 
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-        xobj.open('GET', './view1/top-12-year.json', true); // Replace 'my_data' with the path to your file
+        xobj.open('GET', './svk/top-12-year.json', true); // Replace 'my_data' with the path to your file
         xobj.onreadystatechange = function () {
             if (xobj.readyState == 4 && xobj.status == "200") {
                 // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -76,7 +33,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-        xobj.open('GET', './view1/prices.json', true);
+        xobj.open('GET', './svk/prices.json', true);
         xobj.onreadystatechange = function () {
             if (xobj.readyState == 4 && xobj.status == "200") {
                 callback(xobj.responseText);
@@ -115,7 +72,7 @@ angular.module('myApp.view1', ['ngRoute'])
                 var price6hp = '<td>' + value.small + '</td>';
                 var price9hp = '<td>' + value.big + '</td>';
 
-                console.log(value.id);
+                //console.log(value.id);
                 if (value.id === '1') {
                     $('#prices-table-1').append( '<tr>'+
                         priceTime + price6hp + price9hp
@@ -140,17 +97,20 @@ angular.module('myApp.view1', ['ngRoute'])
         });
     }
 
-    $(document).ready(function () {
-      init();
-    });
 
-    var mapDiv = $(".map");
+    var mapDiv = jQuery("#map");
     mapDiv.click(function () {
-        $('.map iframe').css("pointer-events", "auto");
+        jQuery('#map iframe').css("pointer-events", "auto");
+        console.log('click')
     });
 
     mapDiv.mouseleave(function() {
-        $('.map iframe').css("pointer-events", "none");
+        jQuery('#map iframe').css("pointer-events", "none");
+        console.log('mouseleave')
+    });
+
+    $(document).ready(function () {
+        init();
     });
 
 }]);
