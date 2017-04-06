@@ -14,6 +14,7 @@
     "bootstrap": "^3.3.7",
     "scrollreveal": "^3.3.4",
     "css-hamburgers": "^0.8.1",
-    "angular-scroll": "^1.0.0"
+    "angular-scroll": "^1.0.0",
+    "fancybox": "^3.0.47"
   }
 }

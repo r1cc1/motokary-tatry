@@ -48,52 +48,32 @@
     "big": "438 &euro;"
   },
   {
-    "id": "4",
+    "id": "6",
     "time": "1 h",
-    "small": "126 &euro;",
-    "big": ""
+    "three": "93 &euro;",
+    "four": "126 &euro;",
+    "five": "157 &euro;"
   },
   {
-    "id": "4",
+    "id": "6",
     "time": "2 h",
-    "small": "244 &euro;",
-    "big": ""
+    "three": "178 &euro;",
+    "four": "244 &euro;",
+    "five": "307 &euro;"
   },
   {
-    "id": "4",
+    "id": "6",
     "time": "3 h",
-    "small": "364 &euro;",
-    "big": ""
+    "three": "263 &euro;",
+    "four": "367 &euro;",
+    "five": "462 &euro;"
   },
   {
-    "id": "4",
+    "id": "6",
     "time": "4 h",
-    "small": "481 &euro;",
-    "big": ""
-  },
-  {
-    "id": "5",
-    "time": "1 h",
-    "small": "157 &euro;",
-    "big": ""
-  },
-  {
-    "id": "5",
-    "time": "2 h",
-    "small": "307 &euro;",
-    "big": ""
-  },
-  {
-    "id": "5",
-    "time": "3 h",
-    "small": "462 &euro;",
-    "big": ""
-  },
-  {
-    "id": "5",
-    "time": "4 h",
-    "small": "592 &euro;",
-    "big": ""
+    "three": "348 &euro;",
+    "four": "481 &euro;",
+    "five": "592 &euro;"
   }
 ]
 

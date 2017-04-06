@@ -7,21 +7,12 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
     $routeProvider.otherwise({redirectTo: '/svk'})
 
-}]).controller('mainCtrl', ['$scope','$location', function ($scope, $location) {
+}]).controller('mainCtrl', ['$scope','$location', '$window', function ($scope, $location, $window) {
+
     console.log('init mainCtrl');
 
     // Submenu State init
     $scope.subeMenuState = false;
-
-
-    $scope.english = function () {
-        $scope.lang = 'eng';
-        console.log('$scope.lang ' + $scope.lang);
-    };
-    $scope.slovak = function () {
-        $scope.lang = 'svk';
-        console.log('$scope.lang ' + $scope.lang);
-    };
 
 
     $scope.getClass = function (path) {
@@ -42,12 +33,15 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
             viewportheight = document.getElementsByTagName('body')[0].clientHeight
         }
         $scope.displayHeight = viewportheight;
-        $scope.video = $scope.displayHeight / 2;
-        $scope.mapHeight = $scope.displayHeight / 2;
+        $scope.videoHeight = $scope.displayHeight / 1.5;
+        $scope.mapHeight = $scope.displayHeight / 1.5;
     }
 
     function onScroll() {
         var scroll = $(window).scrollTop();
+
+        $scope.moveReady = 0;
+
         if(scroll >= $scope.displayHeight) {
             $scope.subMenuState = true;
             $scope.$apply();
@@ -95,6 +89,6 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         getWindowHeight();
     });
 
-}]);
+}]).value('duScrollOffset', 50);
 
 

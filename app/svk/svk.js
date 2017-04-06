@@ -15,6 +15,14 @@ angular.module('myApp.svk', ['ngRoute'])
     // set Language
     $scope.lang = 'svk';
 
+    $scope.category_1 = 'Rekordy';
+    $scope.category_2 = 'Aktuality';
+    $scope.category_3 = 'Video';
+    $scope.category_4 = 'Otvaracie Hodiny';
+    $scope.category_5 = 'Info';
+    $scope.category_6 = 'Cenník';
+    $scope.category_7 = 'Mapa';
+
     function loadJSON(callback) {
 
         var xobj = new XMLHttpRequest();
@@ -44,6 +52,30 @@ angular.module('myApp.svk', ['ngRoute'])
 
     function init() {
 
+        function getDate() {
+            var month = new Array();
+            month[0] = "Január";
+            month[1] = "Február";
+            month[2] = "Marec";
+            month[3] = "Apríl";
+            month[4] = "Máj";
+            month[5] = "Jun";
+            month[6] = "Jul";
+            month[7] = "August";
+            month[8] = "September";
+            month[9] = "Oktober";
+            month[10] = "November";
+            month[11] = "December";
+
+            var d = new Date();
+            var n = month[d.getMonth()];
+
+            $scope.actualMonth = n;
+            console.log($scope.actualMonth);
+        }
+        getDate();
+
+
         loadJSON(function(response) {
             // Parse JSON string into object
             var actual_JSON = JSON.parse(response);
@@ -61,6 +93,9 @@ angular.module('myApp.svk', ['ngRoute'])
                     driverId + driverTime + driverName
                     + '</tr>');
             });
+
+            $('#top-12').find('tr').first().addClass('first-place');
+            $('#top-12-year').find('tr').first().addClass('first-place');
         });
 
         loadPrices(function(response) {
@@ -78,23 +113,32 @@ angular.module('myApp.svk', ['ngRoute'])
                         priceTime + price6hp + price9hp
                         + '</tr>');
                 }
-                if (value.id === '3') {
-                    $('#prices-table-2').append( '<tr>'+
-                        priceTime + price6hp + price9hp
-                        + '</tr>');
-                }
-                if (value.id === '4') {
-                    $('#prices-table-3').append( '<tr>'+
-                        priceTime + price6hp
-                        + '</tr>');
-                }
-                if (value.id === '5') {
-                    $('#prices-table-4').append( '<tr>'+
-                        priceTime + price6hp
+            });
+
+            $.each(actual_JSON, function (index, value) {
+                var priceId = '<td>' + value.id + '</td>';
+                var priceTime = '<td>' + value.time + '</td>';
+                var price3 = '<td>' + value.three + '</td>';
+                var price4 = '<td>' + value.four + '</td>';
+                var price5 = '<td>' + value.five + '</td>';
+
+                if (value.id === '6') {
+                    $('#prices-table-2').append( '<tr>'+ priceTime +
+                        price3 + price4 + price5
                         + '</tr>');
                 }
             });
         });
+
+        var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
+        var hamburgers = document.querySelectorAll(".hamburger");
+        if (hamburgers.length > 0) {
+            forEach(hamburgers, function(hamburger) {
+                hamburger.addEventListener("click", function() {
+                    this.classList.toggle("is-active");
+                }, false);
+            });
+        }
     }
 
 
@@ -111,6 +155,8 @@ angular.module('myApp.svk', ['ngRoute'])
 
     $(document).ready(function () {
         init();
+        $(this).scrollTop(0);
+        $scope.isLoaded = true;
+        $scope.$apply();
     });
-
 }]);
