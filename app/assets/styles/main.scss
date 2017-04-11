@@ -71,7 +71,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
 }
 
 //* Extra Small Screen *//
-@media all and(min-width: 12em) {
+@media all and(min-width: 10em) {
 
   //* helper *//
   body:before {
@@ -242,7 +242,6 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
       }
     }
   }
-
   .header-content {
     overflow: hidden;
   }
@@ -256,36 +255,65 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     position: absolute;
     height: 100%;
     width: 100%;
-    background: transparent $url_image_1 center no-repeat;
+    background: transparent $url_image_1  no-repeat center center;
+    background-attachment: scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
+    min-width: 100%;
+    min-height:100%;
+    max-width:100%;
+    max-height:100%;
   }
   .main-image2 {
     display: block;
     position: absolute;
     height: 100%;
     width: 100%;
-    background: transparent $url_image_3 center no-repeat;
+    background: transparent $url_image_3  no-repeat center center;
+    background-attachment:scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
+    min-width: 100%;
+    min-height:100%;
+    max-width:100%;
+    max-height:100%;
   }
   .main-image3 {
     display: block;
     position: absolute;
     height: 100%;
     width: 100%;
-    background: transparent $url_image_2 center no-repeat;
+    background: transparent $url_image_2  no-repeat center center;
+    background-attachment:scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
+    background-position-x: 0;
+    min-width: 100%;
+    min-height:100%;
+    max-width:100%;
+    max-height:100%;
   }
   .main-image4 {
     display: block;
     position: absolute;
     height: 100%;
     width: 100%;
-    background: transparent $url_image_4 center no-repeat;
+    background: transparent $url_image_4  no-repeat center center;
+    background-attachment:scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
+    min-width: 100%;
+    min-height:100%;
+    max-width:100%;
+    max-height:100%;
   }
   .bg-primary {
     background: $color_dark;
@@ -293,6 +321,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
   .bg-highlight {
     background: $color_highlight-blue;
   }
+
   .race-flag {
     display: block;
     position: relative;
@@ -302,9 +331,8 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     background-size: 125px;
   }
   .no-padding {
-    padding: 0;
+    padding: 0 !important;
   }
-
   .content {
     background: $color_white;
   }
@@ -335,7 +363,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
   }
   .navbar-nav {
     margin: 0 -15px;
-    padding: 1em;
+    padding: 0;
   }
   .navbar-default {
     display: block;
@@ -451,7 +479,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     height: 100px;
     width: auto;
     background: transparent $url_5 center no-repeat;
-    background-size: cover;
+    background-size: cover;-webkit-background-size: cover;
     color: transparent;
     font-size: 0;
   }
@@ -636,6 +664,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
       }
 
       span.scroll-icon {
+        display: none;
         position: absolute;
         top: -100px;
         left: 0;
@@ -650,7 +679,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
         box-sizing: border-box;
       }
       span.scroll-label {
-        font-size: 2.4em;
+        font-size: 2em;
         position: absolute;
         left: -1em;
         transform: scale(1);
@@ -744,9 +773,17 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     display: block;
     position: relative;
     z-index: 2;
-    background: $url_14 no-repeat center;
+    background: #474747 $url_14 no-repeat center center;
+    background-attachment:scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
+    min-width: 100%;
+    min-height:100%;
+    max-width:100%;
+    max-height:100%;
+
     &:before {
       content: '';
       display: block;
@@ -758,6 +795,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
       background: $color_dark_transparent_more;
       z-index: 1;
     }
+
   }
   .menu > li {
     display: inline;
@@ -776,10 +814,6 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     position: relative;
     float: left;
     margin-right: 0.5em;
-    //background: $color_highlight-blue;
-    //mask: $url_4 center / contain no-repeat;
-    //-webkit-mask: $url_4 center / contain no-repeat;
-
   }
   .nav li {
     a {
@@ -875,7 +909,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
       text-align: right;
     }
     h5.highlight-title {
-      font-size: 6em;
+      font-size: 3em;
       background: #05d7fd;
       line-height: 1em;
       padding: 0.2em 0.5em;
@@ -884,12 +918,12 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
       text-shadow: none;
     }
     h5.highlight-subtitle {
-      font-size: 4em;
+      font-size: 3em;
       top: 2em;
       text-shadow: 0 0 2px black;
     }
     h5.highlight-text {
-      font-size: 2.1em;
+      font-size: 1.5em;
       top: 20%;
       line-height: 1.5em;
       text-shadow: 0 0 2px black;
@@ -917,6 +951,12 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
   body:before {
     content: 'Medium Screen';
   }
+  .navbar-nav {
+    padding: 1em;
+  }
+  .main-image3 {
+    background-position-x: auto;
+  }
   .icon {
     width: 3em;
     height: 3em;
@@ -926,6 +966,15 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
   }
   h2.logo-text {
     font-size: 4em;
+  }
+  h5.highlight-text {
+    font-size: 1.1em;
+  }
+  span.scroll-icon {
+    display: block;
+  }
+  span.scroll-label {
+    font-size: 2.4em;
   }
   .top-content a {
     font-size: 1.5em;
@@ -949,14 +998,22 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     line-height: 1.8em;
   }
 }
+
 //* Large Screen *//
 @media all and(min-width: 50em) {
+
   //* helper *//
   body:before {
     content: 'Large Screen';
   }
   .container {
     padding: 6em 0;
+  }
+  .main-image, .main-image2, .main-image3, .main-image4 {
+    background-attachment: fixed;
+  }
+  .bg-road {
+    background: #474747;
   }
   .navbar-header {
     float: none;
@@ -1073,7 +1130,6 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
   body:before {
     content: 'Extra Large Screen';
   }
-
   footer {
     .container {
       padding: 2em;
