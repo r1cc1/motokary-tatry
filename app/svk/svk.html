@@ -19,11 +19,11 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
 
-                <li du-scrollspy="top-drivers">
-                    <a du-smooth-scroll="category" href="#top-drivers">{{category_1}}</a>
-                </li>
                 <li du-scrollspy="news">
-                    <a du-smooth-scroll="news" href="#news">{{category_2}}</a>
+                    <a du-smooth-scroll="news" href="#news">{{category_1}}</a>
+                </li>
+                <li du-scrollspy="top-drivers">
+                    <a du-smooth-scroll="category" href="#top-drivers">{{category_2}}</a>
                 </li>
                 <li du-scrollspy="video">
                     <a du-smooth-scroll="video" href="#video">{{category_3}}</a>
@@ -34,11 +34,17 @@
                 <li du-scrollspy="info2">
                     <a du-smooth-scroll="info2" href="#info2">{{category_5}}</a>
                 </li>
-                <li du-scrollspy="prices">
-                    <a du-smooth-scroll="prices" href="#prices">{{category_6}}</a>
+
+                <li du-scrollspy="gallery">
+                    <a du-smooth-scroll="gallery" href="#gallery">{{category_6}}</a>
                 </li>
+
+                <li du-scrollspy="prices">
+                    <a du-smooth-scroll="prices" href="#prices">{{category_7}}</a>
+                </li>
+
                 <li du-scrollspy="map">
-                    <a du-smooth-scroll="map" href="#map">{{category_7}}</a>
+                    <a du-smooth-scroll="map" href="#map">{{category_8}}</a>
                 </li>
                 <li class="language-switch">
                     <a class="language" href="#/eng" ng-if="lang != 'eng'">ENG</a>
@@ -72,10 +78,13 @@
                         <h2 class="logo-text" ng-class="{'loaded': isLoaded}">MotokáryTatry</h2>
                         <h1 class="main-title" ng-class="{'loaded': isLoaded}"
                             ng-style="{'transform': 'translateX(-'+moveReady+'px)', '-webkit-transform': 'translateX(-'+moveReady+'px)', '-ms-transform': 'translateX(-'+moveReady+'px)'}">
-                            READY TO WIN?</h1>
+                            {{mainTitle}}</h1>
                     </div>
                     <div class="bottom-content">
-                        <a du-smooth-scroll="category" href="#top-drivers">READY!</a>
+                        <a du-smooth-scroll="news" href="#news">
+                            <span class="scroll-icon"></span>
+                            <span class="scroll-label">READY!</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -83,13 +92,34 @@
     </div>
 </header>
 
+
+<section id="news" class="bg-highlight">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <span class="icon icon-news"></span>
+                <h2 class="section-heading bold">{{category_1}}</h2>
+                <hr class="light">
+                <p>{{newsText}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="graphic" class="no-padding" ng-style="{height: mapHeight + 'px'}">
+    <div class="highlight-image main-image4">
+        <h5 class="highlight-title">19:89s</h5>
+        <h5 class="highlight-subtitle">Rekord</h5>
+    </div>
+</section>
+
 <section id="top-drivers" class="no-padding">
     <div class="race-flag"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <span class="icon icon-medal"></span>
-                <h2 class="section-heading">{{category_1}} 2017</h2>
+                <h2 class="section-heading">{{category_2}} 2017</h2>
                 <hr class="light">
             </div>
         </div>
@@ -101,8 +131,8 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>TIME</th>
-                        <th>NAME</th>
+                        <th>{{driverTime}}</th>
+                        <th>{{driverName}}</th>
                     </tr>
                     </thead>
                     <tbody id="top-12">
@@ -116,8 +146,8 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>TIME</th>
-                        <th>NAME</th>
+                        <th>{{driverTime}}</th>
+                        <th>{{driverName}}</th>
                     </tr>
                     </thead>
                     <tbody id="top-12-year">
@@ -128,24 +158,7 @@
     </div>
 </section>
 
-<section id="graphic" class="no-padding" ng-style="{height: mapHeight + 'px'}">
-    <div class="main-image2"></div>
-</section>
 
-<section id="news" class="bg-highlight">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <span class="icon icon-news"></span>
-                <h2 class="section-heading bold">{{category_2}}</h2>
-                <hr class="light">
-                <p>Rezervácie a informácie s tým spojené prijímame IBA TELEFONICKY na O2 čísle <b>0949 388 748</b> po
-                    14.00 hod každý deň. Ak chcete jazdiť na zľavnený kupón, musíte ho doniesť vytlačený. My netlaćíme,
-                    a ani neakceptujeme fotky v mobile... Tešíme sa na Vašu návštevu, Motokary Tatry Team</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section id="video" class="no-padding">
     <iframe id="youtube" src="https://www.youtube.com/embed/Q1EVT_R4aBI" width="100%" height="315" ng-style="{height: videoHeight + 'px'}"  frameborder="0" allowfullscreen></iframe>
@@ -162,28 +175,27 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-4 text-center">
+            <div class="col-lg-6 col-md-6 text-center">
                 <div class="service-box">
                     <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
                     <h3 class="bold clear-top">14:00 – 22:00</h3>
-                    <h3>Pondelok – Štvrtok</h3>
+                    <h3>{{day7}} – {{day4}}</h3>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 text-center">
+            <div class="col-lg-6 col-md-6 text-center">
                 <div class="service-box">
                     <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                    <h3 class="bold">14:00 - 00:00</h3>
-                    <h3>Sobota - Piatok</h3>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                    <h3 class="bold">14:00 – 22:00</h3>
-                    <h3>Nedela</h3>
+                    <h3 class="bold">14:00 - 24:00</h3>
+                    <h3>{{day5}} - {{day6}}</h3>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section id="graphic3" class="no-padding" ng-style="{height: mapHeight + 'px'}">
+    <div class="highlight-image main-image2">
+        <h5 class="highlight-subtitle">Ready to be Faster?</h5>
     </div>
 </section>
 
@@ -192,61 +204,93 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <span class="icon icon-info"></span>
-                <h2 class="section-heading">Dráha a motokáry</h2>
+                <h2 class="section-heading">{{motoTitle}}</h2>
                 <hr class="light">
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-6">
-                <p>V našom motokárovom parku máme motokáry s motorom Honda GX 200 (s výkonom 6,5 HP) a
-                    Honda GX 270 (s výkonom 9 HP). Aby ste si mohli vychutnať pocit z jazdy na 9 koňovej motokáre,
-                    musíte splniť časový limit na 6,5 ke.</p>
-
+                <p>{{motoText1}}</p>
             </div>
             <div class="col-lg-6 col-md-6">
-                <p>Dĺžka dráhy je 230 metrov pri šírke dráhy od 3,5 metra až do 5,5 metra. Na trati je možné dosiahnuť
-                    priemernú rýchlosť nad 30 km/h. Striedavé technické úseky s rovinkou Vám zaručene splnia Vaše
-                    očakávania.</p>
+                <p>{{motoText2}}</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="photos" class="no-padding">
-    <div class="gallery">
+<section id="gallery" class="no-padding">
+
+    <div class="gallery-small">
 
         <div class="row">
-            <a href="../assets/imgs/istock1.jpeg" data-fancybox="group" data-caption="Foto #1">
-                <img src="../assets/imgs/istock1.jpeg" alt="" />
+            <a href="../assets/imgs/gallery/img1.jpg" data-fancybox="group" data-caption="Foto #1">
+                <img src="../assets/imgs/gallery/img1.jpg" alt="" />
+            </a>
+            <a href="../assets/imgs/gallery/img2.jpg" data-fancybox="group" data-caption="Foto #2">
+                <img src="../assets/imgs/gallery/img2.jpg" alt="" />
             </a>
 
-            <a href="../assets/imgs/istock2.jpeg" data-fancybox="group" data-caption="Foto #2">
-                <img src="../assets/imgs/istock2.jpeg" alt="" />
+        </div>
+        <div class="row">
+            <a href="../assets/imgs/gallery/img3.jpg" data-fancybox="group" data-caption="Foto #3">
+                <img src="../assets/imgs/gallery/img3.jpg" alt="" />
             </a>
-            <a href="../assets/imgs/istock3.jpeg" data-fancybox="group" data-caption="Foto #3">
-                <img src="../assets/imgs/istock3.jpeg" alt="" />
-            </a>
-            <a href="../assets/imgs/istock4.jpeg" data-fancybox="group" data-caption="Foto #4">
-                <img src="../assets/imgs/istock4.jpeg" alt="" />
+            <a href="../assets/imgs/gallery/img4.jpg" data-fancybox="group" data-caption="Foto #4">
+                <img src="../assets/imgs/gallery/img4.jpg" alt="" />
             </a>
         </div>
         <div class="row">
+            <a href="../assets/imgs/gallery/img5.jpg" data-fancybox="group" data-caption="Foto #5">
+                <img src="../assets/imgs/gallery/img5.jpg" alt="" />
+            </a>
+            <a href="../assets/imgs/gallery/img6.jpg" data-fancybox="group" data-caption="Foto #6">
+                <img src="../assets/imgs/gallery/img6.jpg" alt="" />
+            </a>
 
-            <a href="../assets/imgs/shutter1.jpg" data-fancybox="group" data-caption="Foto #5">
-                <img src="../assets/imgs/shutter1.jpg" alt="" />
+        </div>
+        <div class="row">
+            <a href="../assets/imgs/gallery/img7.jpg" data-fancybox="group" data-caption="Foto #7">
+                <img src="../assets/imgs/gallery/img7.jpg" alt="" />
             </a>
-            <a href="../assets/imgs/shutter2.jpg" data-fancybox="group" data-caption="Foto #6">
-                <img src="../assets/imgs/shutter2.jpg" alt="" />
-            </a>
-            <a href="../assets/imgs/shutter3.jpg" data-fancybox="group" data-caption="Foto #7">
-                <img src="../assets/imgs/shutter3.jpg" alt="" />
-            </a>
-            <a href="../assets/imgs/shutter4.jpg" data-fancybox="group" data-caption="Foto #8">
-                <img src="../assets/imgs/shutter4.jpg" alt="" />
+            <a href="../assets/imgs/gallery/img8.jpg" data-fancybox="group" data-caption="Foto #8">
+                <img src="../assets/imgs/gallery/img8.jpg" alt="" />
             </a>
         </div>
-
     </div>
+
+    <div class="gallery-large">
+        <div class="row">
+            <a href="../assets/imgs/gallery/img1.jpg" data-fancybox="group" data-caption="Foto #1">
+                <img src="../assets/imgs/gallery/img1.jpg" alt="" />
+            </a>
+            <a href="../assets/imgs/gallery/img2.jpg" data-fancybox="group" data-caption="Foto #2">
+                <img src="../assets/imgs/gallery/img2.jpg" alt="" />
+            </a>
+            <a href="../assets/imgs/gallery/img3.jpg" data-fancybox="group" data-caption="Foto #3">
+                <img src="../assets/imgs/gallery/img3.jpg" alt="" />
+            </a>
+            <a href="../assets/imgs/gallery/img4.jpg" data-fancybox="group" data-caption="Foto #4">
+                <img src="../assets/imgs/gallery/img4.jpg" alt="" />
+            </a>
+        </div>
+        <div class="row">
+
+            <a href="../assets/imgs/gallery/img5.jpg" data-fancybox="group" data-caption="Foto #5">
+                <img src="../assets/imgs/gallery/img5.jpg" alt="" />
+            </a>
+            <a href="../assets/imgs/gallery/img6.jpg" data-fancybox="group" data-caption="Foto #6">
+                <img src="../assets/imgs/gallery/img6.jpg" alt="" />
+            </a>
+            <a href="../assets/imgs/gallery/img7.jpg" data-fancybox="group" data-caption="Foto #7">
+                <img src="../assets/imgs/gallery/img7.jpg" alt="" />
+            </a>
+            <a href="../assets/imgs/gallery/img8.jpg" data-fancybox="group" data-caption="Foto #8">
+                <img src="../assets/imgs/gallery/img8.jpg" alt="" />
+            </a>
+        </div>
+    </div>
+
 </section>
 
 <section id="prices" class="no-padding">
@@ -255,7 +299,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <span class="icon icon-price-tag"></span>
-                <h2 class="section-heading">{{category_6}}</h2>
+                <h2 class="section-heading">{{category_7}}</h2>
                 <hr class="primary">
             </div>
         </div>
@@ -264,7 +308,7 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th>1 Kart</th>
+                        <th>{{oneKart}}</th>
                         <th>6.5 HP</th>
                         <th>9 HP</th>
                     </tr>
@@ -278,9 +322,9 @@
                     <thead>
                     <tr>
                         <th></th>
-                        <th>3 Kart</th>
-                        <th>4 Kart</th>
-                        <th>5 Kart</th>
+                        <th>{{threeKart}}</th>
+                        <th>{{fourKart}}</th>
+                        <th>{{fiveKart}}</th>
                     </tr>
                     </thead>
                     <tbody id="prices-table-2">
@@ -289,18 +333,20 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <p>Hygienická kukla predaj 2,00 &euro;</p>
+            <div class="col-lg-6 col-md-6 text-center">
+                <p>{{maskSell}}</p>
             </div>
-            <div class="col-lg-6 col-md-6">
-                <p>Hygienická kukla prenájom 1,00 &euro;</p>
+            <div class="col-lg-6 col-md-6 text-center">
+                <p>{{maskRent}}</p>
             </div>
         </div>
     </div>
 </section>
 
 <section id="graphic2" class="no-padding" ng-style="{height: mapHeight + 'px'}">
-    <div class="main-image3"></div>
+    <div class="highlight-image main-image3">
+        <h5 class="highlight-text">{{highlightText2}}</h5>
+    </div>
 </section>
 
 <section id="map">
@@ -308,7 +354,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <span class="icon icon-location"></span>
-                <h2 class="section-heading">{{category_7}}</h2>
+                <h2 class="section-heading">{{category_8}}</h2>
                 <hr class="primary">
             </div>
         </div>
@@ -322,9 +368,7 @@
                 </p>
             </div>
             <div class="col-lg-6 col-md-6">
-                <p>
-                    Motokáry Tatry sa nachádzajú na druhom poschodí bývalej výrobnej haly vo Svite (viď mapu), kde poskytujeme kvalitnú adrenalínovú zábavu na motokárach.
-                </p>
+                <p>{{mapText}}</p>
             </div>
 
         </div>
@@ -345,30 +389,52 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6">
-                <h3>Prevádzkové pokyny:</h3>
+                <h3>{{warningTitle}}</h3>
                 <ul>
-                    <li>Každý návštevník je povinný pred použitím motokáry zoznámiť sa s týmito prevádzkovými a bezpečnostnými podmienkami. Prevzatím stroja od prevádzkovateľa (obsluhy) k jazde zákazník potvrdzuje, že sa s týmito podmienkami zoznámil a zaväzuje sa k ich dodržiavaniu.</li>
-                    <li>Nastupovanie do motokár a vystupovanie z motokár sa prevádza výhradne v priestoroch depa za pokynu personálu</li>
-                    <li>Výjazd z depa a príjazdy do depa riadi personál</li>
-                    <li>Pri vjazde do depa je povinnosť signalizácie (odbočenie) zdvihnutou rukou pri spomalenej jazde</li>
-                    <li>V prípade kolízie zákaz vystupovať z motokáry, môže dôjsť k ohrozeniu inou motokárou a následne k úrazu. Zdvihnutím ruky privoláte obslužný personál</li>
-                    <li>Pri jazde prísny zákaz akéhokoľvek kontaktu s inou motokárou</li>
-                    <li>Počas jazdy zákaz púšťania volantu a mávania rukami, prípadne nohami</li>
+                    <!--<li>Každý návštevník je povinný pred použitím motokáry zoznámiť sa s týmito prevádzkovými a bezpečnostnými podmienkami. Prevzatím stroja od prevádzkovateľa (obsluhy) k jazde zákazník potvrdzuje, že sa s týmito podmienkami zoznámil a zaväzuje sa k ich dodržiavaniu.</li>-->
+                    <!--<li>Nastupovanie do motokár a vystupovanie z motokár sa prevádza výhradne v priestoroch depa za pokynu personálu</li>-->
+                    <!--<li>Výjazd z depa a príjazdy do depa riadi personál</li>-->
+                    <!--<li>Pri vjazde do depa je povinnosť signalizácie (odbočenie) zdvihnutou rukou pri spomalenej jazde</li>-->
+                    <!--<li>V prípade kolízie zákaz vystupovať z motokáry, môže dôjsť k ohrozeniu inou motokárou a následne k úrazu. Zdvihnutím ruky privoláte obslužný personál</li>-->
+                    <!--<li>Pri jazde prísny zákaz akéhokoľvek kontaktu s inou motokárou</li>-->
+                    <!--<li>Počas jazdy zákaz púšťania volantu a mávania rukami, prípadne nohami</li>-->
+                    <!--<li>Prísny zákaz vstupu na dráhu</li>-->
+                    <!--<li>Rešpektovať bezpečnostné a obslužné pokyny personálu</li>-->
+
+                    <li>{{rulesText0}}</li>
+                    <li>{{rulesText1}}</li>
+                    <li>{{rulesText2}}</li>
+                    <li>{{rulesText3}}</li>
+                    <li>{{rulesText4}}</li>
+                    <li>{{rulesText5}}</li>
+                    <li>{{rulesText6}}</li>
+                    <li>{{rulesText7}}</li>
+                    <li>{{rulesText8}}</li>
+
                 </ul>
             </div>
+
             <div class="col-lg-6 col-md-6">
-                <h3>Prevádzkové pokyny:</h3>
+                <h3>{{warningTitle}}</h3>
                 <ul>
-                    <li>Prísny zákaz vstupu na dráhu</li>
-                    <li>Rešpektovať bezpečnostné a obslužné pokyny personálu</li>
-                    <li>Jazda maloletých do 15 rokov len v sprievode rodičov (zákonných zástupcov)</li>
-                    <li>Pri jazde je povinnosť používať hygienickú kuklu (možnosť zakúpiť pri bare) a ochrannú helmu, ktorá musí byť zapnutá.</li>
-                    <li>Zákaz jazdenia v nad-rozmernom oblečení ( veľké vetrovky, košele, šále, dlhé vlasy)</li>
-                    <li>Pozor na horúci výfuk!!! (hlavne pri vystupovaní) - v prípade poškodenia odevu nezodpovedáme za vzniknuté škody</li>
-                    <li>Zákaz jazdy pri podozrení použitia alkoholu, hypnotizujúcich a omamných látok</li>
-                    <li>V priestoroch dráhy a depa zákaz fajčenia a vstupu s pohármi</li>
-                    <li>Doporučujeme vo vlastnom záujme odloženie kľúčov, mobilných telefónov a iných cenností, ktoré môžu vypadnúť z vreciek</li>
-                    <li>V prípade nedodržania prevádzkových a bezpečnostných pokynov prevádzkovateľ nezodpovedá za škody vzniknuté na zdraví a majetku.</li>
+                    <!--<li>Jazda maloletých do 15 rokov len v sprievode rodičov (zákonných zástupcov)</li>-->
+                    <!--<li>Pri jazde je povinnosť používať hygienickú kuklu (možnosť zakúpiť pri bare) a ochrannú helmu, ktorá musí byť zapnutá.</li>-->
+                    <!--<li>Zákaz jazdenia v nad-rozmernom oblečení ( veľké vetrovky, košele, šále, dlhé vlasy)</li>-->
+                    <!--<li>Pozor na horúci výfuk!!! (hlavne pri vystupovaní) - v prípade poškodenia odevu nezodpovedáme za vzniknuté škody</li>-->
+                    <!--<li>Zákaz jazdy pri podozrení použitia alkoholu, hypnotizujúcich a omamných látok</li>-->
+                    <!--<li>V priestoroch dráhy a depa zákaz fajčenia a vstupu s pohármi</li>-->
+                    <!--<li>Doporučujeme vo vlastnom záujme odloženie kľúčov, mobilných telefónov a iných cenností, ktoré môžu vypadnúť z vreciek</li>-->
+                    <!--<li>V prípade nedodržania prevádzkových a bezpečnostných pokynov prevádzkovateľ nezodpovedá za škody vzniknuté na zdraví a majetku.</li>-->
+
+
+                    <li>{{rulesText9}}</li>
+                    <li>{{rulesText10}}</li>
+                    <li>{{rulesText11}}</li>
+                    <li>{{rulesText12}}</li>
+                    <li>{{rulesText13}}</li>
+                    <li>{{rulesText14}}</li>
+                    <li>{{rulesText15}}</li>
+                    <li>{{rulesText16}}</li>
                 </ul>
             </div>
         </div>

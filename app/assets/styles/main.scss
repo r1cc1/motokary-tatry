@@ -10,14 +10,10 @@ $color_dark: #191919;
 $color_dark_transparent: rgba(25,25,25,0.8);
 $color_dark_transparent_more: rgba(25, 25, 25, 0.5);
 
-//fonts
-$font_0: Montserrat;
-$font_1: sans-serif;
+$font_1: Helvetica Neue, Arial;
 
 //urls
 $url_0: url(../fonts/Montserrat/Montserrat-Light.ttf);
-$url_1: url(../imgs/istock4.jpeg);
-$url_2: url(../imgs/istock3.jpeg);
 $url_3: url(../imgs/race-flag.png);
 $url_4: url(../icons/icon-flags.svg);
 $url_5: url(../imgs/motokary-tatry-logo.svg);
@@ -31,15 +27,13 @@ $url_12: url(../icons/icon-email.svg);
 $url_13: url(../icons/icon-phone.svg);
 $url_14: url(../imgs/road-texture.jpg);
 
-$url_shutter_1: url(../imgs/shutter1.jpg);
-$url_shutter_2: url(../imgs/shutter2.jpg);
-$url_shutter_3: url(../imgs/shutter3.jpg);
-$url_shutter_4: url(../imgs/shutter4.jpg);
-$url_shutter_5: url(../imgs/shutter5.jpg);
-
+$url_image_1: url(../imgs/image-web-main.jpg);
+$url_image_2: url(../imgs/image-web-gokarts.jpg);
+$url_image_3: url(../imgs/image-web-helm.jpg);
+$url_image_4: url(../imgs/image-web-helm2.jpg);
 
 @font-face {
-  font-family: $font_0;
+  font-family: 'Montserrat';
   src: $url_0 format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -87,10 +81,14 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     left: 0; bottom: 0;
     color: red;
     z-index: 9999;
+
+    /* after production */
+    display: none;
+
   }
   body {
     background: $color_dark;
-    font-family: $font_0, $font_1;
+    font-family: 'Montserrat', $font_1;
     font-weight: normal;
   }
   header {
@@ -108,7 +106,7 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     z-index: 3;
     margin-bottom: 64px;
     p {
-      font-family: $font_0, $font_1;
+      font-family: 'Montserrat', $font_1;
       font-size: 1em;
       padding-top: 1em;
       padding-bottom: 1em;
@@ -119,7 +117,7 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     }
   }
   h1,h2,h3,h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: $font_0, $font_1;
+    font-family: 'Montserrat', Helvetica Helvetica Neue, Helvetica, Arial;
     font-weight: lighter;
     line-height: 1.1;
     color: inherit;
@@ -131,7 +129,6 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
       text-align: center;
       text-transform: uppercase;
       color: $color_white;
-      font-weight: bold;
       z-index: 1;
       position: relative;
       margin: 0 auto;
@@ -150,7 +147,6 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     &.logo-text {
       font-size: 1.7em;
       color: $color_highlight-blue;
-      font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 0.2em;
       @include transition(all 0.25 linear);
@@ -186,7 +182,7 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     }
   }
   h3 {
-    font-family: $font_0, $font_1;
+    font-family: 'Montserrat', $font_1;
     font-weight: lighter;
     line-height: 1.1;
     color: inherit;
@@ -200,15 +196,15 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     }
   }
   p {
-    font-family: $font_0, $font_1;
+    font-family: 'Montserrat', $font_1;
     font-weight: lighter;
   }
   span {
-    font-family: $font_0, $font_1;
+    font-family: 'Montserrat', $font_1;
     font-weight: lighter;
   }
   a {
-    font-family: $font_0, $font_1;
+    font-family: 'Montserrat', $font_1;
     font-weight: lighter;
     color: $color_highlight-blue;
     > span {
@@ -237,13 +233,16 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
   .table {
     th, tr {
       text-align: center;
+      font-size: 1.3em;
     }
     thead {
       th, tr {
         font-weight: bold;
+        font-size: 1.1em;
       }
     }
   }
+
   .header-content {
     overflow: hidden;
   }
@@ -257,7 +256,7 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     position: absolute;
     height: 100%;
     width: 100%;
-    background: transparent $url_shutter_2 center no-repeat;
+    background: transparent $url_image_1 center no-repeat;
     background-size: cover;
     background-attachment: fixed;
   }
@@ -266,7 +265,7 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     position: absolute;
     height: 100%;
     width: 100%;
-    background: transparent $url_2 center no-repeat;
+    background: transparent $url_image_3 center no-repeat;
     background-size: cover;
     background-attachment: fixed;
   }
@@ -275,7 +274,16 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     position: absolute;
     height: 100%;
     width: 100%;
-    background: transparent $url_shutter_1 center no-repeat;
+    background: transparent $url_image_2 center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .main-image4 {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: transparent $url_image_4 center no-repeat;
     background-size: cover;
     background-attachment: fixed;
   }
@@ -558,25 +566,97 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     text-align: center;
     width: 100%;
     left: 0;
+
+    @-webkit-keyframes sdb {
+      0% {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+        opacity: 0;
+      }
+    }
+    @keyframes sdb {
+      0% {
+        transform: rotate(-45deg) translate(0, 0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(-45deg) translate(-20px, 20px);
+        opacity: 0;
+      }
+    }
+    @-webkit-keyframes opa {
+      0% {
+        opacity: 0.2;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.2;
+      }
+    }
+    @keyframes opa {
+      0% {
+        opacity: 0.2;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.2;
+      }
+    }
+
     a {
       display: inline-block;
       position: relative;
       color: $color_white;
-      font-size: 1.2em;
-      width: 60px;
-      height: 60px;
-      background: $url_4 no-repeat center;
-      background-size: contain;
+      font-weight: bold;
+      width: 50px;
+      height: 50px;
       margin: 0 auto;
-      line-height: 8em;
       transform: scale(1);
       @include transition(all 0.25 linear);
-      font-weight: bold;
 
       &:hover, &:focus {
-        text-decoration: none;
-        transform: scale(1.2);
+        span.scroll-label {
+          text-decoration: none;
+          transform: scale(1.1);
+          @include transition(all 0.25 linear);
+        }
+      }
+
+      span.scroll-icon {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        border-left: 9pt solid white;
+        border-bottom: 9pt solid white;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-animation: sdb 1.5s infinite;
+        animation: sdb 1.5s infinite;
+        box-sizing: border-box;
+      }
+      span.scroll-label {
+        font-size: 2.4em;
+        position: absolute;
+        left: -1em;
+        transform: scale(1);
         @include transition(all 0.25 linear);
+        -webkit-animation: opa 1.5s infinite;
+        animation: opa 1.5s infinite;
       }
     }
   }
@@ -590,6 +670,7 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
       background-color: $color_highlight-blue;
     }
   }
+
   .icon {
     display: block;
     position: relative;
@@ -610,9 +691,6 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     margin-bottom: 20px;
     background: $url_7 no-repeat center;
     background-size: contain;
-    background: $color_black;
-    mask: $url_7 center / contain no-repeat;
-    -webkit-mask: $url_7 center / contain no-repeat;
   }
   .icon-news {
     width: 60px;
@@ -620,9 +698,6 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     margin-bottom: 20px;
     background: $url_8 no-repeat center;
     background-size: contain;
-    background: $color_black;
-    mask: $url_8 center / contain no-repeat;
-    -webkit-mask: $url_8 center / contain no-repeat;
   }
   .icon-medal {
     width: 60px;
@@ -630,9 +705,6 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     margin-bottom: 20px;
     background: $url_9 no-repeat center;
     background-size: contain;
-    background: $color_black;
-    mask: $url_9 center / contain no-repeat;
-    -webkit-mask: $url_9 center / contain no-repeat;
   }
   .icon-price-tag {
     width: 60px;
@@ -640,9 +712,7 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     margin-bottom: 20px;
     background: $url_10 no-repeat center;
     background-size: contain;
-    background: $color_black;
-    mask: $url_10 center / contain no-repeat;
-    -webkit-mask: $url_10 center / contain no-repeat;
+
   }
   .icon-location {
     width: 60px;
@@ -650,9 +720,6 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     margin-bottom: 20px;
     background: $url_11 no-repeat center;
     background-size: contain;
-    background: $color_black;
-    mask: $url_11 center / contain no-repeat;
-    -webkit-mask: $url_11 center / contain no-repeat;
   }
   .icon-race {
     background: $url_4 no-repeat center;
@@ -709,9 +776,10 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     position: relative;
     float: left;
     margin-right: 0.5em;
-    background: $color_highlight-blue;
-    mask: $url_4 center / contain no-repeat;
-    -webkit-mask: $url_4 center / contain no-repeat;
+    //background: $color_highlight-blue;
+    //mask: $url_4 center / contain no-repeat;
+    //-webkit-mask: $url_4 center / contain no-repeat;
+
   }
   .nav li {
     a {
@@ -733,11 +801,18 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
   .navbar-fixed-top .navbar-collapse {
     max-height: none;
   }
-  .row p {
-    font-size: 1.1em;
-    line-height: 1.5em;
-    text-align: justify;
-    padding: 1em 0;
+  .row {
+      p {
+        font-size: 1.1em;
+        line-height: 1.5em;
+        text-align: justify;
+        padding: 1em 0;
+      }
+    .text-center {
+      p {
+        text-align: center;
+      }
+    }
   }
   .stick-it a {
     line-height: 0;
@@ -766,14 +841,14 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
     }
   }
 
-  .gallery {
+  .gallery-small {
     display: table;
     table-layout: fixed;
     overflow: hidden;
     a {
       display: table-cell;
       position: relative;
-      width: 25%;
+      width: 50%;
       overflow: hidden;
 
       img {
@@ -784,6 +859,42 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
       }
     }
   }
+  .gallery-medium {
+    display: none;
+  }
+  .gallery-large {
+    display: none;
+  }
+
+  .highlight-image {
+    h5 {
+      position: absolute;
+      color: white;
+      right: 0;
+      padding: 0.5em;
+      text-align: right;
+    }
+    h5.highlight-title {
+      font-size: 6em;
+      background: #05d7fd;
+      line-height: 1em;
+      padding: 0.2em 0.5em;
+      top: 1em;
+      color: black;
+      text-shadow: none;
+    }
+    h5.highlight-subtitle {
+      font-size: 4em;
+      top: 2em;
+      text-shadow: 0 0 2px black;
+    }
+    h5.highlight-text {
+      font-size: 2.1em;
+      top: 20%;
+      line-height: 1.5em;
+      text-shadow: 0 0 2px black;
+    }
+  }
 }
 
 //* Small Screen *//
@@ -791,11 +902,6 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
   //* helper *//
   body:before {
     content: 'Small Screen';
-    display: block;
-    position: fixed;
-    left: 0; bottom: 0;
-    color: red;
-    z-index: 9999;
   }
 
   h1.main-title {
@@ -810,11 +916,6 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
   //* helper *//
   body:before {
     content: 'Medium Screen';
-    display: block;
-    position: fixed;
-    left: 0; bottom: 0;
-    color: red;
-    z-index: 9999;
   }
   .icon {
     width: 3em;
@@ -843,17 +944,16 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
       right: 0;
     }
   }
+  .row p {
+    font-size: 1.4em;
+    line-height: 1.8em;
+  }
 }
 //* Large Screen *//
 @media all and(min-width: 50em) {
   //* helper *//
   body:before {
     content: 'Large Screen';
-    display: block;
-    position: fixed;
-    left: 0; bottom: 0;
-    color: red;
-    z-index: 9999;
   }
   .container {
     padding: 6em 0;
@@ -898,11 +998,54 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
       margin-right: 1em;
     }
   }
+
+  .highlight-image {
+    h5 {
+      padding: 1em 0.5em;
+    }
+    h5.highlight-title {
+      font-size: 5em;
+    }
+    h5.highlight-subtitle {
+      font-size: 4em;
+      top: 2.2em;
+    }
+    h5.highlight-text {
+      top: 2em;
+      font-size: 3em;
+      line-height: 1.5em;
+      padding: 2em;
+    }
+  }
+
+  .gallery-large {
+
+    display: table;
+    table-layout: fixed;
+    overflow: hidden;
+    a {
+      display: table-cell;
+      position: relative;
+      width: 25%;
+      overflow: hidden;
+
+      img {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .gallery-small {
+    display: none;
+  }
+
   footer {
     margin-bottom: 0;
 
     .container {
-      padding: 2em;
+      padding: 1em;
     }
   }
   h2.logo-text {
@@ -913,15 +1056,15 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
   }
   .map {
     padding: 2em 0 0 0;
+    margin-bottom: -2em;
 
     div {
-      border: 4px solid $color_dark;
+      border: 1px solid $color_dark;
     }
   }
   h3.bold.clear-top {
     margin-top: 1.5em;
   }
-
 }
 
 //* Extra Large Screen *//
@@ -929,10 +1072,11 @@ $url_shutter_5: url(../imgs/shutter5.jpg);
   //* helper *//
   body:before {
     content: 'Extra Large Screen';
-    display: block;
-    position: fixed;
-    left: 0; bottom: 0;
-    color: red;
-    z-index: 9999;
+  }
+
+  footer {
+    .container {
+      padding: 2em;
+    }
   }
 }
