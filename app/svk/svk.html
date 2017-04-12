@@ -60,7 +60,7 @@
 <header>
     <div id="header-content" class="header-content" ng-style="{height: displayHeight + 'px'}">
         <div class="header-content-inner">
-            <div class="main-image">
+            <div class="main-image" ng-class="{'ios': ios}">
 
                 <div class="center-wrap">
                     <div class="top-content" ng-class="{ 'stick-it': subMenuState}">
@@ -94,7 +94,6 @@
 
 
 <section id="news" class="bg-highlight">
-    <div class="race-flag"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -108,7 +107,7 @@
 </section>
 
 <section id="graphic" class="no-padding" ng-style="{height: mapHeight + 'px'}">
-    <div class="highlight-image main-image4">
+    <div class="highlight-image main-image4"  ng-class="{'ios': ios}">
         <h5 class="highlight-title">{{recordTime}} s</h5>
         <h5 class="highlight-subtitle">Rekord</h5>
     </div>
@@ -195,12 +194,12 @@
 </section>
 
 <section id="graphic3" class="no-padding" ng-style="{height: mapHeight + 'px'}">
-    <div class="highlight-image main-image2">
+    <div class="highlight-image main-image2"  ng-class="{'ios': ios}">
         <h5 class="highlight-subtitle">Ready to be Faster?</h5>
     </div>
 </section>
 
-<section id="info2" class="bg-primary bg-road">
+<section id="info2" class="bg-primary bg-road" ng-class="{'ios': ios}">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -345,7 +344,7 @@
 </section>
 
 <section id="graphic2" class="no-padding" ng-style="{height: mapHeight + 'px'}">
-    <div class="highlight-image main-image3">
+    <div class="highlight-image main-image3"  ng-class="{'ios': ios}">
         <h5 class="highlight-text">{{highlightText2}}</h5>
     </div>
 </section>

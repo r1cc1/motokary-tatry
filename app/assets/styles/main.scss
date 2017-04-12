@@ -256,6 +256,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     height: 100%;
     width: 100%;
     background: transparent $url_image_1  no-repeat center center;
+    background-attachment: scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -286,6 +287,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     height: 100%;
     width: 100%;
     background: transparent $url_image_2  no-repeat center center;
+    background-attachment: scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -302,6 +304,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     height: 100%;
     width: 100%;
     background: transparent $url_image_4  no-repeat center center;
+    background-attachment: scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -313,8 +316,10 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
   }
   .main-image, .main-image2, .main-image3, .main-image4 {
     background-attachment: scroll;
+    &.ios {
+      background-attachment: scroll;
+    }
   }
-
   .bg-primary {
     background: $color_dark;
   }
@@ -774,7 +779,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     position: relative;
     z-index: 2;
     background: #474747 $url_14 no-repeat center center;
-    background-attachment:scroll;
+    background-attachment: scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -783,6 +788,8 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     min-height:100%;
     max-width:100%;
     max-height:100%;
+
+    &.ios { background-attachment:scroll;}
 
     &:before {
       content: '';
@@ -907,6 +914,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
       right: 0;
       padding: 0.5em;
       text-align: right;
+      font-weight: bold;
     }
     h5.highlight-title {
       font-size: 3em;
@@ -920,10 +928,11 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     h5.highlight-subtitle {
       font-size: 3em;
       top: 2em;
-      text-shadow: 0 0 2px black;
+      text-shadow: 0 0 5px black;
+      color: $color_highlight-blue
     }
     h5.highlight-text {
-      font-size: 1.5em;
+      font-size: 1.8em;
       top: 20%;
       line-height: 1.5em;
       text-shadow: 0 0 2px black;
@@ -931,6 +940,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
       font-weight: bolder;
     }
   }
+
 }
 
 //* Small Screen *//

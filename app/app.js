@@ -81,6 +81,15 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
     $(document).ready(function () {
         getWindowHeight();
+        var iOS = !!navigator.userAgent && /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+        if( iOS ) {
+            console.log('iOS: ');
+            $scope.ios = true;
+        } else {
+            console.log('not iOS');
+            $scope.ios = false;
+        }
     });
 
     window.addEventListener('resize', function () {
