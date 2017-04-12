@@ -14,7 +14,6 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
     // Submenu State init
     $scope.subeMenuState = false;
 
-
     $scope.getClass = function (path) {
         return ($location.path().substr(0, path.length) === path) ? 'active' : '';
     };
@@ -74,7 +73,6 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
         onScroll();
     });
-
 
 
     $(window).scroll(function () {

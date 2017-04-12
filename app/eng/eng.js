@@ -75,7 +75,7 @@ angular.module('myApp.eng', ['ngRoute'])
     $scope.rulesText16 = 'If you do not follow our instructions, we may finish your ride earlier without any pay back';
 
 
-    function loadJSON(callback) {
+    function loadTopYear(callback) {
 
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
@@ -141,7 +141,7 @@ angular.module('myApp.eng', ['ngRoute'])
         }
         getDate();
 
-        loadJSON(function(response) {
+        loadTopYear(function(response) {
             // Parse JSON string into object
             var actual_JSON = JSON.parse(response);
 
@@ -156,6 +156,9 @@ angular.module('myApp.eng', ['ngRoute'])
             });
 
             $('#top-12-year').find('tr').first().addClass('first-place');
+
+            $scope.recordTime = actual_JSON[0].time;
+            $scope.$apply();
         });
 
 

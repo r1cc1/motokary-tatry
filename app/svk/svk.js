@@ -9,7 +9,7 @@ angular.module('myApp.svk', ['ngRoute'])
     controller: 'svkCtrl'
   });
 
-}]).controller('svkCtrl', [ '$scope', function($scope) {
+}]).controller('svkCtrl', [ '$scope','$rootScope', function($scope, $rootScope) {
 
     console.log('init svkCtrl');
     // set Language
@@ -43,7 +43,7 @@ angular.module('myApp.svk', ['ngRoute'])
     $scope.maskSell = 'Hygienická kukla predaj 2,00 €';
     $scope.maskRent = 'Hygienická kukla prenájom 1,00 €';
 
-    $scope.highlightText2 = 'Poskytujeme príjemné posedenie v Bare a organizujeme firemné akcie na objednávku';
+    $scope.highlightText2 = 'Poskytujeme príjemné posedenie v bare a organizujeme firemné akcie na objednávku';
 
     $scope.mapText = 'Motokáry Tatry sa nachádzajú na druhom poschodí bývalej výrobnej haly vo Svite (viď mapu), kde poskytujeme kvalitnú adrenalínovú zábavu na motokárach.';
 
@@ -77,7 +77,7 @@ angular.module('myApp.svk', ['ngRoute'])
     $scope.rulesText16 = 'V prípade nedodržania prevádzkových a bezpečnostných pokynov prevádzkovateľ nezodpovedá za škody vzniknuté na zdraví a majetku.';
 
 
-    function loadJSON(callback) {
+    function loadTopYear(callback) {
 
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
@@ -143,7 +143,7 @@ angular.module('myApp.svk', ['ngRoute'])
         getDate();
 
 
-        loadJSON(function(response) {
+        loadTopYear(function(response) {
             // Parse JSON string into object
             var actual_JSON = JSON.parse(response);
 
@@ -158,6 +158,9 @@ angular.module('myApp.svk', ['ngRoute'])
             });
 
             $('#top-12-year').find('tr').first().addClass('first-place');
+
+            $scope.recordTime = actual_JSON[0].time;
+            $scope.$apply();
         });
 
 
