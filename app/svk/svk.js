@@ -26,7 +26,7 @@ angular.module('myApp.svk', ['ngRoute'])
     $scope.category_7 = 'Cenník';
     $scope.category_8 = 'Mapa';
 
-    $scope.newsText = 'Rezervácie a informácie s tým spojené prijímame IBA TELEFONICKY na O2 čísle 0949 388 748 po 14.00 hod každý deň. Ak chcete jazdiť na zľavnený kupón, musíte ho doniesť vytlačený. My netlaćíme a ani neakceptujeme fotky v mobile... Tešíme sa na Vašu návštevu, Motokary Tatry Team';
+    $scope.newsText = 'Dňa 17.4.2017 bude Hala celý deň zatvorená. Prajeme príjemné Veľkonočné sviatky. Rezervácie a informácie s tým spojené prijímame IBA TELEFONICKY na O2 čísle 0949 388 748 po 14.00 hod každý deň. Ak chcete jazdiť na zľavnený kupón, musíte ho doniesť vytlačený. My netlaćíme a ani neakceptujeme fotky v mobile... Tešíme sa na Vašu návštevu, Motokary Tatry Team';
 
     $scope.driverTime = 'Čas';
     $scope.driverName = 'Meno';

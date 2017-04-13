@@ -23,7 +23,7 @@ angular.module('myApp.eng', ['ngRoute'])
     $scope.category_7 = 'Prices';
     $scope.category_8 = 'Map';
 
-    $scope.newsText = 'Reservations can be accepted ONLY BY PHONE CALL on number +421 949 388 748 after 2 p.m every day.  If you want to use discount coupon, you have to print it before arrival. We do not accept digital version. We are looking forward to see you soon, Motokary Tatry Team';
+    $scope.newsText = 'On Monday 17.4.2017 we are closed. Wish you pleasant Eastern Holidays. Reservations can be accepted ONLY BY PHONE CALL on number +421 949 388 748 after 2 p.m every day.  If you want to use discount coupon, you have to print it before arrival. We do not accept digital version. We are looking forward to see you soon, Motokary Tatry Team';
 
     $scope.driverTime = 'Time';
     $scope.driverName = 'Name';
