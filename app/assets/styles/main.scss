@@ -207,6 +207,9 @@ $url_image_6: url(../imgs/web-laser-main.jpg);
     font-family: 'Montserrat', Montserrat, Roboto, $font_1;
     font-weight: lighter;
   }
+  .text-primary {
+    color: $color_highlight-blue !important;
+  }
   a {
     font-family: 'Montserrat', Montserrat, Roboto, $font_1;
     font-weight: lighter;
@@ -408,7 +411,7 @@ $url_image_6: url(../imgs/web-laser-main.jpg);
     position: relative;
   }
   #map {
-    padding: 0 15px;
+    padding: 3em 0 2em 0;
   }
   .first-place {
     background-color: $color_highlight-blue-light !important;
@@ -1204,10 +1207,6 @@ $url_image_6: url(../imgs/web-laser-main.jpg);
   .map {
     padding: 2em 0 0 0;
     margin-bottom: -2em;
-
-    div {
-      border: 1px solid $color_dark;
-    }
   }
   h3.bold.clear-top {
     margin-top: 1.5em;
