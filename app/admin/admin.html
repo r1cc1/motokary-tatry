@@ -16,7 +16,7 @@
         </div>
     </div>
 </div>
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-start">
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top ng-scope">
     <div class="container-fluid">
         <div class="navbar-header">
 
@@ -58,19 +58,16 @@
                                         <br>
                                         <div class="alert alert-danger" role="alert" ng-show="showError">Nesprány email alebo heslo</div>
                                         <div class="form-horizontal">
-                                            <div class="form-group">
-                                                <label for="login-email" class="col-sm-2 control-label">Email</label>
-                                                <div class="col-sm-10">
-                                                    <input id="login-email" type="email" class="form-control email"  ng-model="loginEmail" required>
-                                                </div>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">email</div>
+                                                <input id="login-email" type="email" class="form-control email"  ng-model="loginEmail" required>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="password"
-                                                       class="col-sm-2 control-label">Password</label>
-                                                <div class="col-sm-10">
-                                                    <input id="password" type="password" class="form-control password"  ng-model="loginPass" required>
-                                                </div>
+                                            <br>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">heslo</div>
+                                                <input id="password" type="password" class="form-control password"  ng-model="loginPass" required>
                                             </div>
+                                            <br>
                                             <div class="form-group">
                                                 <div class="col-sm-offset-2 col-sm-10">
                                                     <button class="btn btn-primary btn-lg" style="float:right;" ng-click="logMeIn(loginEmail,loginPass )">Login</button>

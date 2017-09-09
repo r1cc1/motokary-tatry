@@ -22,11 +22,6 @@ angular.module('myApp.admin', ['ngRoute','firebase'])
     $scope.adminPass = 'admin123gnmt';
 
     $scope.logMeIn = function (loginEmail, loginPass) {
-        // console.log('--email--');
-        // console.log(loginEmail);
-        // console.log('--pass--');
-        // console.log(loginPass);
-
         if(loginEmail === $scope.adminUser) {
             console.log('MSG: good-email');
 
@@ -383,6 +378,19 @@ angular.module('myApp.admin', ['ngRoute','firebase'])
     });
 
 
+
+    jQuery(window).scroll(function() {
+
+        var scroll = $(window).scrollTop();
+        if (scroll >= 0) {
+            jQuery(".navbar-default").removeClass("navbar-start");
+            jQuery(".navbar-default").addClass("navbar-default");
+        } else {
+            jQuery(".navbar-default").removeClass("navbar-start");
+            jQuery(".navbar-default").addClass("navbar-default");
+        }
+
+    });
 
     angular.element(document).ready(function () {
         init();
