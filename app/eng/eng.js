@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('myApp.eng', ['ngRoute'])
+angular.module('myApp.eng', ['ngRoute', 'firebase'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/eng', {
     templateUrl: 'svk/svk.html',
     controller: 'engCtrl'
   });
-}]).controller('engCtrl', [ '$scope', function($scope) {
+}]).controller('engCtrl', [ '$scope','$rootScope', function($scope, $rootScope) {
 
     console.log('init engCtrl');
     $scope.lang = 'eng';
@@ -38,8 +38,8 @@ angular.module('myApp.eng', ['ngRoute'])
     $scope.fourKart = '4 Karts';
     $scope.fiveKart = '5 Karts';
 
-    $scope.maskSell = 'Hygienic mask for sell 2,00 €';
-    $scope.maskRent = 'Hygienic mask for rent 1,00 €';
+    $scope.maskSell = 'Hygienic mask for sell ';
+    $scope.maskRent = 'Hygienic mask for rent ';
 
     $scope.highlightText2 = 'You can enjoy our Bar and we organise team-buildings for companies on demand';
 
@@ -74,48 +74,6 @@ angular.module('myApp.eng', ['ngRoute'])
     $scope.rulesText15 = 'By purchasing the ride you agree on our rules';
     $scope.rulesText16 = 'If you do not follow our instructions, we may finish your ride earlier without any pay back';
 
-
-    function loadTopYear(callback) {
-
-        var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-        xobj.open('GET', './svk/top-year.json', true); // Replace 'my_data' with the path to your file
-        xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-                callback(xobj.responseText);
-            }
-        };
-        xobj.send(null);
-    }
-
-    function loadTopMonth(callback) {
-
-        var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-        xobj.open('GET', './svk/top-month.json', true); // Replace 'my_data' with the path to your file
-        xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-                callback(xobj.responseText);
-            }
-        };
-        xobj.send(null);
-    }
-
-    function loadPrices(callback) {
-
-        var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-        xobj.open('GET', './svk/prices.json', true);
-        xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-                callback(xobj.responseText);
-            }
-        };
-        xobj.send(null);
-    }
-
     function init() {
 
         function getDate() {
@@ -141,75 +99,27 @@ angular.module('myApp.eng', ['ngRoute'])
         }
         getDate();
 
-        loadTopYear(function(response) {
-            // Parse JSON string into object
-            var actual_JSON = JSON.parse(response);
+        // loadTopYear(function(response) {
+        //     // Parse JSON string into object
+        //     var actual_JSON = JSON.parse(response);
+        //
+        //     $.each(actual_JSON, function (index, value) {
+        //         var driverId = '<td>' + value.id + '</td>';
+        //         var driverName = '<td>' + value.name + '</td>';
+        //         var driverTime = '<td>' + value.time + '</td>';
+        //
+        //         $('#top-12-year').append( '<tr>'+
+        //             driverId + driverTime + driverName
+        //             + '</tr>');
+        //     });
+        //
+        //     $('#top-12-year').find('tr').first().addClass('first-place');
+        //
+        //     $scope.recordTime = actual_JSON[0].time;
+        //     $scope.$apply();
+        // });
 
-            $.each(actual_JSON, function (index, value) {
-                var driverId = '<td>' + value.id + '</td>';
-                var driverName = '<td>' + value.name + '</td>';
-                var driverTime = '<td>' + value.time + '</td>';
 
-                $('#top-12-year').append( '<tr>'+
-                    driverId + driverTime + driverName
-                    + '</tr>');
-            });
-
-            $('#top-12-year').find('tr').first().addClass('first-place');
-
-            $scope.recordTime = actual_JSON[0].time;
-            $scope.$apply();
-        });
-
-
-        loadTopMonth(function(response) {
-            // Parse JSON string into object
-            var actual_JSON = JSON.parse(response);
-
-            $.each(actual_JSON, function (index, value) {
-                var driverId = '<td>' + value.id + '</td>';
-                var driverName = '<td>' + value.name + '</td>';
-                var driverTime = '<td>' + value.time + '</td>';
-
-                $('#top-12').append( '<tr>'+
-                    driverId + driverTime + driverName
-                    + '</tr>');
-            });
-
-            $('#top-12').find('tr').first().addClass('first-place');
-        });
-
-        loadPrices(function(response) {
-            var actual_JSON = JSON.parse(response);
-
-            $.each(actual_JSON, function (index, value) {
-                var priceId = '<td>' + value.id + '</td>';
-                var priceTime = '<td>' + value.time + '</td>';
-                var price6hp = '<td>' + value.small + '</td>';
-                var price9hp = '<td>' + value.big + '</td>';
-
-                //console.log(value.id);
-                if (value.id === '1') {
-                    $('#prices-table-1').append( '<tr>'+
-                        priceTime + price6hp + price9hp
-                        + '</tr>');
-                }
-            });
-
-            $.each(actual_JSON, function (index, value) {
-                var priceId = '<td>' + value.id + '</td>';
-                var priceTime = '<td>' + value.time + '</td>';
-                var price3 = '<td>' + value.three + '</td>';
-                var price4 = '<td>' + value.four + '</td>';
-                var price5 = '<td>' + value.five + '</td>';
-
-                if (value.id === '6') {
-                    $('#prices-table-2').append( '<tr>'+ priceTime +
-                        price3 + price4 + price5
-                        + '</tr>');
-                }
-            });
-        });
 
         var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
         var hamburgers = document.querySelectorAll(".hamburger");
@@ -234,7 +144,7 @@ angular.module('myApp.eng', ['ngRoute'])
         console.log('mouseleave')
     });
 
-    $(document).ready(function () {
+    angular.element(document).ready(function () {
         init();
         $(this).scrollTop(0);
         $scope.isLoaded = true;

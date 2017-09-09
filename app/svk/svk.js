@@ -15,6 +15,7 @@ angular.module('myApp.svk', ['ngRoute'])
     // set Language
     $scope.lang = 'svk';
 
+    //// custom Texts
     $scope.mainTitle = 'Ready to Win?';
 
     $scope.category_1 = 'Aktuality';
@@ -26,7 +27,7 @@ angular.module('myApp.svk', ['ngRoute'])
     $scope.category_7 = 'Cenník';
     $scope.category_8 = 'Mapa';
 
-    $scope.newsText = 'Dňa 17.4.2017 bude Hala celý deň zatvorená. Prajeme príjemné Veľkonočné sviatky. Rezervácie a informácie s tým spojené prijímame IBA TELEFONICKY na O2 čísle 0949 388 748 po 14.00 hod každý deň. Ak chcete jazdiť na zľavnený kupón, musíte ho doniesť vytlačený. My netlaćíme a ani neakceptujeme fotky v mobile... Tešíme sa na Vašu návštevu, Motokary Tatry Team';
+    //$scope.newsText = 'Dňa 17.4.2017 bude Hala celý deň zatvorená. Prajeme príjemné Veľkonočné sviatky. Rezervácie a informácie s tým spojené prijímame IBA TELEFONICKY na O2 čísle 0949 388 748 po 14.00 hod každý deň. Ak chcete jazdiť na zľavnený kupón, musíte ho doniesť vytlačený. My netlaćíme a ani neakceptujeme fotky v mobile... Tešíme sa na Vašu návštevu, Motokary Tatry Team';
 
     $scope.driverTime = 'Čas';
     $scope.driverName = 'Meno';
@@ -40,8 +41,9 @@ angular.module('myApp.svk', ['ngRoute'])
     $scope.fourKart = '4 Káry';
     $scope.fiveKart = '5 Kár';
 
-    $scope.maskSell = 'Hygienická kukla predaj 2,00 €';
-    $scope.maskRent = 'Hygienická kukla prenájom 1,00 €';
+
+    $scope.maskSell = 'Hygienická kukla predaj ';
+    $scope.maskRent = 'Hygienická kukla prenájom ';
 
     $scope.highlightText2 = 'Poskytujeme príjemné posedenie v bare a organizujeme firemné akcie na objednávku';
 
@@ -77,46 +79,20 @@ angular.module('myApp.svk', ['ngRoute'])
     $scope.rulesText16 = 'V prípade nedodržania prevádzkových a bezpečnostných pokynov prevádzkovateľ nezodpovedá za škody vzniknuté na zdraví a majetku.';
 
 
-    function loadTopYear(callback) {
-
-        var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-        xobj.open('GET', './svk/top-year.json', true); // Replace 'my_data' with the path to your file
-        xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-                callback(xobj.responseText);
-            }
-        };
-        xobj.send(null);
-    }
-
-    function loadTopMonth(callback) {
-
-        var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-        xobj.open('GET', './svk/top-month.json', true); // Replace 'my_data' with the path to your file
-        xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-                callback(xobj.responseText);
-            }
-        };
-        xobj.send(null);
-    }
-
-    function loadPrices(callback) {
-
-        var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-        xobj.open('GET', './svk/prices.json', true);
-        xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-                callback(xobj.responseText);
-            }
-        };
-        xobj.send(null);
-    }
+    // function loadTopYear(callback) {
+    //
+    //     var xobj = new XMLHttpRequest();
+    //     xobj.overrideMimeType("application/json");
+    //     xobj.open('GET', './svk/top-year.json', true); // Replace 'my_data' with the path to your file
+    //     xobj.onreadystatechange = function () {
+    //         if (xobj.readyState == 4 && xobj.status == "200") {
+    //             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+    //             callback(xobj.responseText);
+    //         }
+    //     };
+    //     xobj.send(null);
+    // }
+    //
 
     function init() {
 
@@ -143,11 +119,29 @@ angular.module('myApp.svk', ['ngRoute'])
         getDate();
 
 
-        loadTopYear(function(response) {
-            // Parse JSON string into object
-            var actual_JSON = JSON.parse(response);
+        // loadTopYear(function(response) {
+        //     // Parse JSON string into object
+        //     var actual_JSON = JSON.parse(response);
+        //
+        //     $.each(actual_JSON, function (index, value) {
+        //         var driverId = '<td>' + value.id + '</td>';
+        //         var driverName = '<td>' + value.name + '</td>';
+        //         var driverTime = '<td>' + value.time + '</td>';
+        //
+        //         $('#top-12-year').append( '<tr>'+
+        //             driverId + driverTime + driverName
+        //             + '</tr>');
+        //     });
+        //
+        //     $('#top-12-year').find('tr').first().addClass('first-place');
+        //
+        //     $scope.recordTime = actual_JSON[0].time;
+        //     $scope.$apply();
+        // });
 
-            $.each(actual_JSON, function (index, value) {
+        $scope.loadTopYear = function() {
+
+            $.each($rootScope.topYear, function (index, value) {
                 var driverId = '<td>' + value.id + '</td>';
                 var driverName = '<td>' + value.name + '</td>';
                 var driverTime = '<td>' + value.time + '</td>';
@@ -159,16 +153,13 @@ angular.module('myApp.svk', ['ngRoute'])
 
             $('#top-12-year').find('tr').first().addClass('first-place');
 
-            $scope.recordTime = actual_JSON[0].time;
+            $scope.recordTime = $scope.topYear[0].time;
             $scope.$apply();
-        });
+        };
 
+        $scope.loadTopMonth = function() {
 
-        loadTopMonth(function(response) {
-            // Parse JSON string into object
-            var actual_JSON = JSON.parse(response);
-
-            $.each(actual_JSON, function (index, value) {
+            $.each($rootScope.topMonth, function (index, value) {
                 var driverId = '<td>' + value.id + '</td>';
                 var driverName = '<td>' + value.name + '</td>';
                 var driverTime = '<td>' + value.time + '</td>';
@@ -179,18 +170,17 @@ angular.module('myApp.svk', ['ngRoute'])
             });
 
             $('#top-12').find('tr').first().addClass('first-place');
-        });
+        };
 
-        loadPrices(function(response) {
-            var actual_JSON = JSON.parse(response);
+        $scope.loadPrices = function() {
 
-            $.each(actual_JSON, function (index, value) {
+            $.each($rootScope.prices, function (index, value) {
                 var priceId = '<td>' + value.id + '</td>';
                 var priceTime = '<td>' + value.time + '</td>';
                 var price6hp = '<td>' + value.small + '</td>';
                 var price9hp = '<td>' + value.big + '</td>';
 
-                //console.log(value.id);
+                console.log(value.id);
                 if (value.id === '1') {
                     $('#prices-table-1').append( '<tr>'+
                         priceTime + price6hp + price9hp
@@ -198,7 +188,7 @@ angular.module('myApp.svk', ['ngRoute'])
                 }
             });
 
-            $.each(actual_JSON, function (index, value) {
+            $.each($rootScope.prices, function (index, value) {
                 var priceId = '<td>' + value.id + '</td>';
                 var priceTime = '<td>' + value.time + '</td>';
                 var price3 = '<td>' + value.three + '</td>';
@@ -211,7 +201,8 @@ angular.module('myApp.svk', ['ngRoute'])
                         + '</tr>');
                 }
             });
-        });
+        };
+
 
         var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
         var hamburgers = document.querySelectorAll(".hamburger");
@@ -222,6 +213,8 @@ angular.module('myApp.svk', ['ngRoute'])
                 }, false);
             });
         }
+
+
     }
 
 
@@ -236,10 +229,19 @@ angular.module('myApp.svk', ['ngRoute'])
         console.log('mouseleave')
     });
 
-    $(document).ready(function () {
+
+
+    angular.element(document).ready(function () {
         init();
         $(this).scrollTop(0);
         $scope.isLoaded = true;
         $scope.$apply();
+
+        setTimeout(function(){
+            $scope.loadPrices();
+            $scope.loadTopMonth();
+            $scope.loadTopYear();
+        }, 1000);
     });
+
 }]);

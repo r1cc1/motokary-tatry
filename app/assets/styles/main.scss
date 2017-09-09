@@ -32,6 +32,10 @@ $url_image_2: url(../imgs/image-web-gokarts.jpg);
 $url_image_3: url(../imgs/image-web-helm.jpg);
 $url_image_4: url(../imgs/image-web-helm2.jpg);
 
+
+$url_image_5: url(../imgs/image-web-safe.jpeg);
+$url_image_6: url(../imgs/web-laser-main.jpg);
+
 @font-face {
   font-family: 'Montserrat';
   src: $url_0 format('truetype');
@@ -88,7 +92,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
   }
   body {
     background: $color_dark;
-    font-family: 'Montserrat', $font_1;
+    font-family: 'Montserrat', Montserrat, Roboto, $font_1;
     font-weight: normal;
   }
   header {
@@ -106,7 +110,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     z-index: 3;
     margin-bottom: 64px;
     p {
-      font-family: 'Montserrat', $font_1;
+      font-family: 'Montserrat', Montserrat, Roboto, $font_1;
       font-size: 1em;
       padding-top: 1em;
       padding-bottom: 1em;
@@ -117,7 +121,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     }
   }
   h1,h2,h3,h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Montserrat', Helvetica Helvetica Neue, Helvetica, Arial;
+    font-family: 'Montserrat', Montserrat, Roboto, Helvetica Helvetica Neue, Helvetica, Arial;
     font-weight: lighter;
     line-height: 1.1;
     color: inherit;
@@ -182,7 +186,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     }
   }
   h3 {
-    font-family: 'Montserrat', $font_1;
+    font-family: 'Montserrat', Montserrat, Roboto, $font_1;
     font-weight: lighter;
     line-height: 1.1;
     color: inherit;
@@ -196,15 +200,15 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     }
   }
   p {
-    font-family: 'Montserrat', $font_1;
+    font-family: 'Montserrat', Montserrat, Roboto, $font_1;
     font-weight: lighter;
   }
   span {
-    font-family: 'Montserrat', $font_1;
+    font-family: 'Montserrat', Montserrat, Roboto, $font_1;
     font-weight: lighter;
   }
   a {
-    font-family: 'Montserrat', $font_1;
+    font-family: 'Montserrat', Montserrat, Roboto, $font_1;
     font-weight: lighter;
     color: $color_highlight-blue;
     > span {
@@ -227,6 +231,9 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
       }
     }
   }
+  textarea.form-control {
+    font-size: 1.5em;
+  }
   .section-heading {
     text-transform: uppercase;
   }
@@ -241,6 +248,9 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
         font-size: 1.1em;
       }
     }
+  }
+  li.ng-binding {
+    font-size: 1.2em;
   }
   .header-content {
     overflow: hidden;
@@ -267,7 +277,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     max-height:100%;
   }
   .main-image2 {
-    display: block;
+    display: table;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -282,7 +292,7 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     max-height:100%;
   }
   .main-image3 {
-    display: block;
+    display: table;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -299,7 +309,8 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     max-height:100%;
   }
   .main-image4 {
-    display: block;
+
+    display: table;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -336,6 +347,55 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
     background: transparent $url_3 center repeat;
     background-size: 125px;
   }
+  .more {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+
+    .more-link {
+      display: table-cell;
+      width: 50%;
+      background: silver;
+
+      &.escape {
+        background: transparent $url_image_5 center no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        color: transparent;
+        font-size: 0;
+      }
+      &.laser {
+        background: transparent $url_image_6 center no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        color: transparent;
+        font-size: 0;
+      }
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+    span {
+      display: block;
+      position: absolute;
+      color: white;
+      z-index: 2;
+      left: 1em;
+      top: 1em;
+      font-size: 3em;
+
+      &.right-float {
+        right: 0.5em;
+        text-align: right;
+        bottom: 1em;
+        top: auto;
+      }
+    }
+
+  }
   .no-padding {
     padding: 0 !important;
   }
@@ -352,6 +412,12 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
   }
   .first-place {
     background-color: $color_highlight-blue-light !important;
+  }
+  .table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+    color: #05d7fd !important;
+    font-size: 1.5em;
   }
   .middle-content {
     position: relative;
@@ -915,22 +981,27 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
       right: 0;
       padding: 0.5em;
       text-align: right;
-      font-weight: bold;
     }
     h5.highlight-title {
       font-size: 3em;
       background: #05d7fd;
       line-height: 1em;
       padding: 0.2em 0.5em;
-      top: 1em;
+      top: 12%;
       color: black;
       text-shadow: none;
+      right: 20%;
     }
     h5.highlight-subtitle {
-      font-size: 3em;
-      top: 2em;
-      text-shadow: 0 0 5px black;
-      color: $color_highlight-blue
+      display: table-cell;
+      vertical-align: middle;
+      position: relative;
+      text-align: center;
+      top: 0;
+      font-size: 6em;
+      color: white;
+      text-transform: uppercase;
+      padding: 0;
     }
     h5.highlight-text {
       font-size: 1.8em;
@@ -1077,8 +1148,14 @@ $url_image_4: url(../imgs/image-web-helm2.jpg);
       font-size: 5em;
     }
     h5.highlight-subtitle {
-      font-size: 4em;
-      top: 2.2em;
+      display: table-cell;
+      vertical-align: middle;
+      position: relative;
+      text-align: center;
+      top: 0;
+      font-size: 8em;
+      color: white;
+      text-transform: uppercase;
     }
     h5.highlight-text {
       top: 2em;

@@ -2,7 +2,8 @@
     <div class="container-fluid">
         <div class="navbar-header">
 
-            <button class="navbar-toggle collapsed hamburger hamburger--spin-r js-hamburger" data-class="hamburger--spin-r"
+            <button class="navbar-toggle collapsed hamburger hamburger--spin-r js-hamburger"
+                    data-class="hamburger--spin-r"
                     type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
                     aria-label="Menu" aria-controls="navigation">
                 <span class="hamburger-box">
@@ -100,16 +101,18 @@
                 <span class="icon icon-news"></span>
                 <h2 class="section-heading bold">{{category_1}}</h2>
                 <hr class="light">
-                <p>{{newsText}}</p>
+                <p ng-if="lang != 'eng'">{{newsTextsk.$value}}</p>
+                <p ng-if="lang != 'svk'">{{newsTexten.$value}}</p>
             </div>
         </div>
     </div>
 </section>
 
 <section id="graphic" class="no-padding" ng-style="{height: mapHeight + 'px'}">
-    <div class="highlight-image main-image4"  ng-class="{'ios': ios}">
-        <h5 class="highlight-title">{{recordTime}} s</h5>
-        <h5 class="highlight-subtitle">Rekord</h5>
+    <div class="highlight-image main-image4" ng-class="{'ios': ios}">
+        <h5 class="highlight-title">{{topYear1time.$value}} sec.</h5>
+        <h5 ng-if="lang != 'eng'" class="highlight-subtitle">Rekord</h5>
+        <h5 ng-if="lang != 'svk'" class="highlight-subtitle">Lap Record</h5>
     </div>
 </section>
 
@@ -135,7 +138,35 @@
                         <th>{{driverName}}</th>
                     </tr>
                     </thead>
-                    <tbody id="top-12">
+                    <!--<tbody id="top-12">-->
+                    <!--</tbody>-->
+
+                    <tbody id="topMonthList">
+                    <tr class="first-place">
+                        <td>1</td>
+                        <td>{{topMonth1time.$value}}</td>
+                        <td>{{topMonth1name.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>{{topMonth2time.$value}}</td>
+                        <td>{{topMonth2name.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>{{topMonth3time.$value}}</td>
+                        <td>{{topMonth3name.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>{{topMonth4time.$value}}</td>
+                        <td>{{topMonth4name.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>{{topMonth5time.$value}}</td>
+                        <td>{{topMonth5name.$value}}</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -150,7 +181,35 @@
                         <th>{{driverName}}</th>
                     </tr>
                     </thead>
-                    <tbody id="top-12-year">
+                    <!--<tbody id="top-12-year">-->
+                    <!--</tbody>-->
+
+                    <tbody id="topYearList">
+                    <tr class="first-place">
+                        <td>1</td>
+                        <td>{{topYear1time.$value}}</td>
+                        <td>{{topYear1name.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>{{topYear2time.$value}}</td>
+                        <td>{{topYear2name.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>{{topYear3time.$value}}</td>
+                        <td>{{topYear3name.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>{{topYear4time.$value}}</td>
+                        <td>{{topYear4name.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>{{topYear5time.$value}}</td>
+                        <td>{{topYear5name.$value}}</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -159,9 +218,9 @@
 </section>
 
 
-
 <section id="video" class="no-padding">
-    <iframe id="youtube" src="https://www.youtube.com/embed/Q1EVT_R4aBI" width="100%" height="315" ng-style="{height: videoHeight + 'px'}"  frameborder="0" allowfullscreen></iframe>
+    <iframe id="youtube" src="https://www.youtube.com/embed/Q1EVT_R4aBI" width="100%" height="315"
+            ng-style="{height: videoHeight + 'px'}" frameborder="0" allowfullscreen></iframe>
 </section>
 
 <section id="hours" class="no-padding">
@@ -194,7 +253,7 @@
 </section>
 
 <section id="graphic3" class="no-padding" ng-style="{height: mapHeight + 'px'}">
-    <div class="highlight-image main-image2"  ng-class="{'ios': ios}">
+    <div class="highlight-image main-image2" ng-class="{'ios': ios}">
         <h5 class="highlight-subtitle">Ready to be Faster?</h5>
     </div>
 </section>
@@ -225,36 +284,36 @@
 
         <div class="row">
             <a href="/assets/imgs/gallery/img1.jpg" data-fancybox="group" data-caption="Foto #1">
-                <img src="/assets/imgs/gallery/img1.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img1.jpg" alt=""/>
             </a>
             <a href="/assets/imgs/gallery/img2.jpg" data-fancybox="group" data-caption="Foto #2">
-                <img src="/assets/imgs/gallery/img2.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img2.jpg" alt=""/>
             </a>
 
         </div>
         <div class="row">
             <a href="/assets/imgs/gallery/img3.jpg" data-fancybox="group" data-caption="Foto #3">
-                <img src="/assets/imgs/gallery/img3.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img3.jpg" alt=""/>
             </a>
             <a href="/assets/imgs/gallery/img4.jpg" data-fancybox="group" data-caption="Foto #4">
-                <img src="/assets/imgs/gallery/img4.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img4.jpg" alt=""/>
             </a>
         </div>
         <div class="row">
             <a href="/assets/imgs/gallery/img5.jpg" data-fancybox="group" data-caption="Foto #5">
-                <img src="/assets/imgs/gallery/img5.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img5.jpg" alt=""/>
             </a>
             <a href="/assets/imgs/gallery/img6.jpg" data-fancybox="group" data-caption="Foto #6">
-                <img src="/assets/imgs/gallery/img6.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img6.jpg" alt=""/>
             </a>
 
         </div>
         <div class="row">
             <a href="/assets/imgs/gallery/img7.jpg" data-fancybox="group" data-caption="Foto #7">
-                <img src="/assets/imgs/gallery/img7.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img7.jpg" alt=""/>
             </a>
             <a href="/assets/imgs/gallery/img8.jpg" data-fancybox="group" data-caption="Foto #8">
-                <img src="/assets/imgs/gallery/img8.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img8.jpg" alt=""/>
             </a>
         </div>
     </div>
@@ -262,31 +321,31 @@
     <div class="gallery-large">
         <div class="row">
             <a href="/assets/imgs/gallery/img1.jpg" data-fancybox="group" data-caption="Foto #1">
-                <img src="/assets/imgs/gallery/img1.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img1.jpg" alt=""/>
             </a>
             <a href="/assets/imgs/gallery/img2.jpg" data-fancybox="group" data-caption="Foto #2">
-                <img src="/assets/imgs/gallery/img2.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img2.jpg" alt=""/>
             </a>
             <a href="/assets/imgs/gallery/img3.jpg" data-fancybox="group" data-caption="Foto #3">
-                <img src="/assets/imgs/gallery/img3.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img3.jpg" alt=""/>
             </a>
             <a href="/assets/imgs/gallery/img4.jpg" data-fancybox="group" data-caption="Foto #4">
-                <img src="/assets/imgs/gallery/img4.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img4.jpg" alt=""/>
             </a>
         </div>
         <div class="row">
 
             <a href="/assets/imgs/gallery/img5.jpg" data-fancybox="group" data-caption="Foto #5">
-                <img src="/assets/imgs/gallery/img5.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img5.jpg" alt=""/>
             </a>
             <a href="/assets/imgs/gallery/img6.jpg" data-fancybox="group" data-caption="Foto #6">
-                <img src="/assets/imgs/gallery/img6.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img6.jpg" alt=""/>
             </a>
             <a href="/assets/imgs/gallery/img7.jpg" data-fancybox="group" data-caption="Foto #7">
-                <img src="/assets/imgs/gallery/img7.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img7.jpg" alt=""/>
             </a>
             <a href="/assets/imgs/gallery/img8.jpg" data-fancybox="group" data-caption="Foto #8">
-                <img src="/assets/imgs/gallery/img8.jpg" alt="" />
+                <img src="/assets/imgs/gallery/img8.jpg" alt=""/>
             </a>
         </div>
     </div>
@@ -308,43 +367,92 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th>{{oneKart}}</th>
-                        <th>6.5 HP</th>
-                        <th>9 HP</th>
+                        <th><b>{{oneKart}}</b></th>
+                        <th><b>6.5 HP</b></th>
+                        <th><b>9 HP</b></th>
                     </tr>
                     </thead>
-                    <tbody id="prices-table-1">
+                    <!--<tbody id="prices-table-1">-->
+                    <!--</tbody>-->
+
+                    <tbody id="pricesTable-1">
+                    <tr>
+                        <td>{{price1time.$value}}</td>
+                        <td>{{price1small.$value}}</td>
+                        <td>{{price1big.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{price2time.$value}}</td>
+                        <td>{{price2small.$value}}</td>
+                        <td>{{price2big.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{price3time.$value}}</td>
+                        <td>{{price3small.$value}}</td>
+                        <td>{{price3big.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{price4time.$value}}</td>
+                        <td>{{price4small.$value}}</td>
+                        <td>{{price4big.$value}}</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
             <div class="col-lg-6 col-md-6">
                 <table class="table table-striped">
                     <thead>
-                    <tr>
-                        <th>6,5 HP</th>
-                        <th>{{threeKart}}</th>
-                        <th>{{fourKart}}</th>
-                        <th>{{fiveKart}}</th>
-                    </tr>
+                        <tr>
+                            <th>6,5 HP</th>
+                            <th>{{threeKart}}</th>
+                            <th>{{fourKart}}</th>
+                            <th>{{fiveKart}}</th>
+                        </tr>
                     </thead>
-                    <tbody id="prices-table-2">
+                    <!--<tbody id="prices-table-2">-->
+                    <!--</tbody>-->
+                    <tbody id="pricesTable-2">
+                    <tr>
+                        <td>{{price5time.$value}}</td>
+                        <td>{{price5three.$value}}</td>
+                        <td>{{price5four.$value}}</td>
+                        <td>{{price5five.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{price6time.$value}}</td>
+                        <td>{{price6three.$value}}</td>
+                        <td>{{price6four.$value}}</td>
+                        <td>{{price6five.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{price7time.$value}}</td>
+                        <td>{{price7three.$value}}</td>
+                        <td>{{price7four.$value}}</td>
+                        <td>{{price7five.$value}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{price8time.$value}}</td>
+                        <td>{{price8three.$value}}</td>
+                        <td>{{price8four.$value}}</td>
+                        <td>{{price8five.$value}}</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-6 text-center">
-                <p>{{maskSell}}</p>
+                <p>{{maskSell}} {{maskSellPrice.$value}}</p>
             </div>
             <div class="col-lg-6 col-md-6 text-center">
-                <p>{{maskRent}}</p>
+                <p>{{maskRent}} {{maskRentPrice.$value}}</p>
             </div>
         </div>
     </div>
 </section>
 
 <section id="graphic2" class="no-padding" ng-style="{height: mapHeight + 'px'}">
-    <div class="highlight-image main-image3"  ng-class="{'ios': ios}">
+    <div class="highlight-image main-image3" ng-class="{'ios': ios}">
         <h5 class="highlight-text">{{highlightText2}}</h5>
     </div>
 </section>
@@ -438,6 +546,19 @@
                 </ul>
             </div>
         </div>
+    </div>
+</section>
+
+<section id="more" class="no-padding" ng-style="{height: moreHeight + 'px'}">
+    <div class="more">
+        <a href="http://escaperoomtatry.sk/" class="more-link escape" target="_blank">
+
+        </a>
+        <a href="http://laserarenatatry.sk/" class="more-link laser" target="_blank">
+
+        </a>
+        <span>Escape Room TATRY</span>
+        <span class="right-float">Laser Aréna TATRY</span>
     </div>
 </section>
 

@@ -1,0 +1,200 @@
+{
+  "newsTextsk" : "Dňa 17.4.2017 bude Hala celý deň zatvorená. Prajeme príjemné Veľkonočné sviatky. Rezervácie a informácie s tým spojené prijímame IBA TELEFONICKY na O2 čísle 0949 388 748 po 14.00 hod každý deň. Ak chcete jazdiť na zľavnený kupón, musíte ho doniesť vytlačený. My netlaćíme a ani neakceptujeme fotky v mobile... Tešíme sa na Vašu návštevu, Motokary Tatry Team",
+  "newsTexten" : "On Monday 17.4.2017 we are closed. Wish you pleasant Eastern Holidays. Reservations can be accepted ONLY BY PHONE CALL on number +421 949 388 748 after 2 p.m every day.  If you want to use discount coupon, you have to print it before arrival. We do not accept digital version. We are looking forward to see you soon, Motokary Tatry Team",
+  "maskSellPrice" : "2,00 €",
+  "maskRentPrice" : "1,00 €",
+
+  "price1time": "8 min",
+  "price1small": "4,90 €",
+  "price1big": "6,70 €",
+
+  "price2time": "16 min",
+  "price2small": "8,90 €",
+  "price2big": "12,30 €",
+
+  "price3time": "30 min",
+  "price3small": "17,00 €",
+  "price3big": "23,40 €",
+
+  "price4time": "60 min",
+  "price4small": "32,50 €",
+  "price4big": "43,40 €",
+
+
+  "price5time": "1 h",
+  "price5three": "93 €",
+  "price5four": "110 €",
+  "price5five": "157 €",
+
+  "price6time": "2 h",
+  "price6three": "178 €",
+  "price6four": "244 €",
+  "price6five": "307 €",
+
+  "price7time": "3 h",
+  "price7three": "263 €",
+  "price7four": "367 €",
+  "price7five": "462 €",
+
+  "price8time": "4 h",
+  "price8three": "348 €",
+  "price8four": "481 €",
+  "price8five": "592 €",
+
+
+  "prices": [
+    {
+      "id": "1",
+      "time": "8 min",
+      "small": "4,90 &euro;",
+      "big": "6,70 &euro;"
+    },
+    {
+      "id": "1",
+      "time": "16 min",
+      "small": "8,90 &euro;",
+      "big": "12,30 &euro;"
+    },
+    {
+      "id": "1",
+      "time": "30 min",
+      "small": "17,00 &euro;",
+      "big": "23,40 &euro;"
+    },
+    {
+      "id": "1",
+      "time": "60 min",
+      "small": "32,50 &euro;",
+      "big": "43,40 &euro;"
+    },
+    {
+      "id": "3",
+      "time": "1 h",
+      "small": "93 &euro;",
+      "big": "110 &euro;"
+    },
+    {
+      "id": "3",
+      "time": "2 h",
+      "small": "178 &euro;",
+      "big": "215 &euro;"
+    },
+    {
+      "id": "3",
+      "time": "3 h",
+      "small": "263 &euro;",
+      "big": "320 &euro;"
+    },
+    {
+      "id": "3",
+      "time": "4 h",
+      "small": "348 &euro;",
+      "big": "438 &euro;"
+    },
+    {
+      "id": "6",
+      "time": "1 h",
+      "three": "93 &euro;",
+      "four": "126 &euro;",
+      "five": "157 &euro;"
+    },
+    {
+      "id": "6",
+      "time": "2 h",
+      "three": "178 &euro;",
+      "four": "244 &euro;",
+      "five": "307 &euro;"
+    },
+    {
+      "id": "6",
+      "time": "3 h",
+      "three": "263 &euro;",
+      "four": "367 &euro;",
+      "five": "462 &euro;"
+    },
+    {
+      "id": "6",
+      "time": "4 h",
+      "three": "348 &euro;",
+      "four": "481 &euro;",
+      "five": "592 &euro;"
+    }
+  ],
+
+  "top_year1name": "JÚLIA",
+  "top_year1time": "20:11",
+  "top_year2name": "MIKI",
+  "top_year2time": "20:99",
+  "top_year3name": "KUČO",
+  "top_year3time": "21:02",
+  "top_year4name": "JARDO",
+  "top_year4time": "21:89",
+  "top_year5name": "Stando",
+  "top_year5time": "22:06",
+
+  "top_month1name": "JÚLIA",
+  "top_month1time": "20:11",
+  "top_month2name": "MAROŠ",
+  "top_month2time": "20:41",
+  "top_month3name": "MUSIC",
+  "top_month3time": "20:57",
+  "top_month4name": "ERKO",
+  "top_month4time": "20:68",
+  "top_month5name": "",
+  "top_month5time": "",
+
+  "top_year": [
+    {
+      "id": 1,
+      "name": "JÚLIA",
+      "time": "20:11"
+    },
+    {
+      "id": 2,
+      "name": "MIKI",
+      "time": "20:99"
+    },
+    {
+      "id": 3,
+      "name": "KUČO",
+      "time": "21:02"
+    },
+    {
+      "id": 4,
+      "name": "JARDO",
+      "time": "21:89"
+    },
+      {
+      "id": 5,
+      "name": "Stando",
+      "time": "22:06"
+    }
+  ],
+  "top_month": [
+    {
+      "id": 1,
+      "name": "JÚLIA",
+      "time": "20:11"
+    },
+    {
+      "id": 2,
+      "name": "MAROŠ",
+      "time": "20:41"
+    },
+    {
+      "id": 3,
+      "name": "MUSIC",
+      "time": "20:57"
+    },
+    {
+      "id": 4,
+      "name": "ERKO",
+      "time": "20:68"
+    },
+    {
+      "id": 5,
+      "name": "",
+      "time": ""
+    }
+  ]
+}

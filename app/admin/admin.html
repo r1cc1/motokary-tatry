@@ -1,0 +1,462 @@
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Uložit zmeny</h5>
+            </div>
+            <div class="modal-body">
+                Naozaj uložit zmeny na Server?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Nie</button>
+                <button  ng-click="formsubmit(adminForm)" class="btn btn-primary" style="float:right;" data-dismiss="modal">Uložit zmeny</button>
+            </div>
+        </div>
+    </div>
+</div>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-start">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <button class="navbar-toggle collapsed hamburger hamburger--spin-r js-hamburger"
+                    data-class="hamburger--spin-r"
+                    type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-label="Menu" aria-controls="navigation">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+            </button>
+
+            <a class="navbar-brand" du-smooth-scroll="header-content" href="#header-content">
+                <div class="logo-icon"></div>
+                <span class="logo-text">MotokáryTatry</span>
+            </a>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<header>
+    <div id="header-content" class="header-content" ng-if="adminLogin || !adminCenter" ng-style="{height: adminHeight + 'px'}">
+        <div class="header-content-inner">
+            <div class="main-image" ng-class="{'ios': ios}">
+
+                <div class="center-wrap">
+                    <div class="middle-content">
+
+                        <div class="row">
+                            <div class="col-xs-6 col-md-4"></div>
+                            <div class="col-xs-6 col-md-4">
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title text-center">Admin Center</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <br>
+                                        <div class="alert alert-danger" role="alert" ng-show="showError">Nesprány email alebo heslo</div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label for="login-email" class="col-sm-2 control-label">Email</label>
+                                                <div class="col-sm-10">
+                                                    <input id="login-email" type="email" class="form-control email"  ng-model="loginEmail" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password"
+                                                       class="col-sm-2 control-label">Password</label>
+                                                <div class="col-sm-10">
+                                                    <input id="password" type="password" class="form-control password"  ng-model="loginPass" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <button class="btn btn-primary btn-lg" style="float:right;" ng-click="logMeIn(loginEmail,loginPass )">Login</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-xs-6 col-md-4"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section id="top-drivers" class="no-padding" ng-if="!adminLogin || adminCenter">
+    <div class="race-flag"></div>
+    <div class="container">
+
+        <br>
+        <h1 class="text-center text-primary text-uppercase">Admin Center</h1>
+        <br>
+
+        <form name="adminForm" role="form">
+
+        <div class="row">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{category_2}} mesiac {{actualMonth}}</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th><b class="text-primary">#</b></th>
+                                <th><b class="text-primary">{{driverTime}}</b></th>
+                                <th><b class="text-primary">{{driverName}}</b></th>
+                            </tr>
+                            </thead>
+                            <tbody id="topMonthEdit">
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <input type="text" class="text-center"  ng-model="topMonth1time.$value"  placeholder="{{topMonth1time.$value}}">
+                                </td>
+                                <td>
+                                    <input type="text" class="text-center" ng-model="topMonth1name.$value"  placeholder="{{topMonth1name.$value}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <input type="text" class="text-center"  ng-model="topMonth2time.$value"  placeholder="{{topMonth2time.$value}}">
+                                </td>
+                                <td>
+                                    <input type="text" class="text-center" ng-model="topMonth2name.$value"  placeholder="{{topMonth2name.$value}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <input type="text" class="text-center"  ng-model="topMonth3time.$value"  placeholder="{{topMonth3time.$value}}">
+                                </td>
+                                <td>
+                                    <input type="text" class="text-center" ng-model="topMonth3name.$value"  placeholder="{{topMonth3name.$value}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    <input type="text" class="text-center"  ng-model="topMonth4time.$value"  placeholder="{{topMonth4time.$value}}">
+                                </td>
+                                <td>
+                                    <input type="text" class="text-center" ng-model="topMonth4name.$value"  placeholder="{{topMonth4name.$value}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>
+                                    <input type="text" class="text-center"  ng-model="topMonth5time.$value"  placeholder="{{topMonth5time.$value}}">
+                                </td>
+                                <td>
+                                    <input type="text" class="text-center" ng-model="topMonth5name.$value"  placeholder="{{topMonth5name.$value}}">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{category_2}} rok 2017</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th><b class="text-primary">#</b></th>
+                                <th><b class="text-primary">{{driverTime}}</b></th>
+                                <th><b class="text-primary">{{driverName}}</b></th>
+                            </tr>
+                            </thead>
+                            <tbody id="topYearEdit">
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <input type="text" class="text-center"  ng-model="topYear1time.$value"  placeholder="{{topYear1time.$value}}">
+                                </td>
+                                <td>
+                                    <input type="text" class="text-center" ng-model="topYear1name.$value"  placeholder="{{topYear1name.$value}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <input type="text" class="text-center"  ng-model="topYear2time.$value"  placeholder="{{topYear2time.$value}}">
+                                </td>
+                                <td>
+                                    <input type="text" class="text-center" ng-model="topYear2name.$value"  placeholder="{{topYear2name.$value}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <input type="text" class="text-center"  ng-model="topYear3time.$value"  placeholder="{{topYear3time.$value}}">
+                                </td>
+                                <td>
+                                    <input type="text" class="text-center" ng-model="topYear3name.$value"  placeholder="{{topYear3name.$value}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    <input type="text" class="text-center"  ng-model="topYear4time.$value"  placeholder="{{topYear4time.$value}}">
+                                </td>
+                                <td>
+                                    <input type="text" class="text-center" ng-model="topYear4name.$value"  placeholder="{{topYear4name.$value}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>
+                                    <input type="text" class="text-center"  ng-model="topYear5time.$value"  placeholder="{{topYear5time.$value}}">
+                                </td>
+                                <td>
+                                    <input type="text" class="text-center" ng-model="topYear5name.$value"  placeholder="{{topYear5name.$value}}">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Aktuality TEXT</h3>
+                </div>
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="newsSvk"><b class="text-primary">Slovenská Verzia</b></label>
+                            <textarea type="text" class="form-control" rows="5" id="newsSvk"
+                                      ng-model="newsTextsk.$value" placeholder="{{newsTextsk.$value}}"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsEng"><b class="text-primary">Anglická Verzia</b></label>
+                            <textarea type="text" class="form-control" rows="5" id="newsEng"
+                                      ng-model="newsTexten.$value" placeholder="{{newsTexten.$value}}"></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Cenník</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th><b class="text-primary">1 Kára</b></th>
+                                    <th><b class="text-primary">6.5 HP</b></th>
+                                    <th><b class="text-primary">9 HP</b></th>
+                                </tr>
+                                </thead>
+                                <tbody id="pricesTable-1">
+                                <tr>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price1time.$value"  placeholder="{{price1time.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price1small.$value"  placeholder="{{price1small.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price1big.$value"  placeholder="{{price1big.$value}}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price2time.$value"  placeholder="{{price2time.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price2small.$value"  placeholder="{{price2small.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price2big.$value"  placeholder="{{price2big.$value}}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price3time.$value"  placeholder="{{price3time.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price3small.$value"  placeholder="{{price3small.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price3big.$value"  placeholder="{{price3big.$value}}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price4time.$value"  placeholder="{{price4time.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price4small.$value"  placeholder="{{price4small.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price4big.$value"  placeholder="{{price4big.$value}}">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th><b class="text-primary">6,5 HP</b></th>
+                                    <th class="ng-binding"><b class="text-primary">3 Káry</b></th>
+                                    <th class="ng-binding"><b class="text-primary">4 Káry</b></th>
+                                    <th class="ng-binding"><b class="text-primary">5 Kár</b></th>
+                                </tr>
+                                </thead>
+                                <tbody id="pricesTable-2">
+                                <tr>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price5time.$value"  placeholder="{{price5time.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price5three.$value"  placeholder="{{price5three.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price5four.$value"  placeholder="{{price5four.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price5five.$value"  placeholder="{{price5five.$value}}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price6time.$value"  placeholder="{{price6time.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price6three.$value"  placeholder="{{price6three.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price6four.$value"  placeholder="{{price6four.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price6five.$value"  placeholder="{{price6five.$value}}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price7time.$value"  placeholder="{{price7time.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price7three.$value"  placeholder="{{price7three.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price7four.$value"  placeholder="{{price7four.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price7five.$value"  placeholder="{{price7five.$value}}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price8time.$value"  placeholder="{{price8time.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price8three.$value"  placeholder="{{price8three.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price8four.$value"  placeholder="{{price8four.$value}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="text-center"  ng-model="price8five.$value"  placeholder="{{price8five.$value}}">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Hygienická kukla</h3>
+                        </div>
+                        <div class="panel-body p-md">
+                            <div class="form-inline">
+                                <div class="input-group">
+                                    <div class="input-group-addon">Predaj</div>
+                                    <input type="text" class="form-control text-center" ng-model="maskSellPrice.$value"  placeholder="{{maskSellPrice.$value}}">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon">Prenájom</div>
+                                    <input type="text" class="form-control text-center" ng-model="maskRentPrice.$value"  placeholder="{{maskRentPrice.$value}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        </form>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg" style="float:right;" data-toggle="modal" data-target="#myModal">
+            Uložit zmeny
+        </button>
+    </div>
+</section>
+
+<footer id="footer" class="bg-primary">
+    <div class="container">
+        <div class="">
+            <div class="col-lg-4 col-md-4 text-center">
+                <p>
+                    ADMIN KONTAKT:
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center">
+                <p>
+                    <a href="tel:00421948876276" target="_self">+421 948 876 276</a>
+                    <span>|</span>
+                    <a href="mailto:gresrichard&#64gmail&#46com" class="email" name="email-kontakt" target="_self">
+                        gresrichard@gmail.com
+                    </a>
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center">
+                <p>
+                    Designed with
+                    <span> ❤ </span>
+                    by
+                    <a href="mailto:gresrichard@gmail.com" class="email">RG</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
